@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📝 Health & Lifestyle Survey</title>
+</head>
+
+<body>
+  <!-- Background Video Header Section -->
+  <header style="position: relative; height: 300px; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color: rgb(252, 252, 252); background: rgb(19, 56, 34); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <h1>📝 Health & Lifestyle Survey</h1>
+      <p>Help us understand and improve daily habits and wellness 🌿</p>
+    </div>
+  </header>
+
+  <!-- Main Survey Form -->
+  <main>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>👤 Personal Information</legend>
+
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" min="10" max="100"><br><br>
+
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender">
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+          <option>Prefer not to say</option>
+        </select><br><br>
+      </fieldset>
+
+      <fieldset>
+        <legend>📚 Education & Occupation</legend>
+
+        <label for="education">Highest Qualification:</label><br>
+        <select id="education" name="education">
+          <option>High School</option>
+          <option>Bachelor's</option>
+          <option>Master's</option>
+          <option>Ph.D</option>
+        </select><br><br>
+
+        <label for="occupation">Occupation:</label><br>
+        <input type="text" id="occupation" name="occupation"><br><br>
+
+        <label>Employment Type:</label><br>
+        <input type="radio" name="empType" value="Full-time"> Full-time<br>
+        <input type="radio" name="empType" value="Part-time"> Part-time<br>
+        <input type="radio" name="empType" value="Student"> Student<br>
+        <input type="radio" name="empType" value="Unemployed"> Unemployed<br><br>
+      </fieldset>
+
+      <fieldset>
+        <legend>🏥 Medical & Lifestyle</legend>
+
+        <label>Do you have any chronic conditions?</label><br>
+        <input type="checkbox" name="conditions" value="Diabetes"> Diabetes<br>
+        <input type="checkbox" name="conditions" value="Hypertension"> Hypertension<br>
+        <input type="checkbox" name="conditions" value="Asthma"> Asthma<br>
+        <input type="checkbox" name="conditions" value="None"> None<br><br>
+
+        <label for="sleep">Average Sleep per Night (hours):</label><br>
+        <input type="range" id="sleep" name="sleep" min="3" max="12"><br><br>
+
+        <label for="lifestyle">Describe your daily routine:</label><br>
+        <textarea id="lifestyle" name="lifestyle" rows="4" cols="50" placeholder="Morning walk, office, healthy eating, etc."></textarea><br><br>
+      </fieldset>
+
+      <!-- Consent & Submit -->
+      <p><input type="checkbox" required> I consent to sharing my responses for research purposes.</p>
+
+      <button type="submit">📨 Submit Survey</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer style="margin-top: 2rem; text-align: center; padding: 1rem; background: #eee;">
+    <p>&copy; 2025 SurveyVerse | Project 5 - Final HTML Project | #100Days100Projects</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mini Wikipedia Clone about Web Technologies">
+  <title>Mini Webpedia - Learn HTML, CSS, JS</title>
+</head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png" alt="Wikipedia Logo" width="50">
+    <h1>🌐 Mini Webpedia</h1>
+    <p>A simple educational site about web technologies like HTML, CSS, and JavaScript. Inspired by <cite>Wikipedia</cite>.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#html">HTML</a></li>
+      <li><a href="#css">CSS</a></li>
+      <li><a href="#js">JavaScript</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="edit.html">Edit</a></li>
+      <li><a href="talk.html">Talk</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <form>
+      <label for="search">Search:</label>
+      <input type="search" id="search" name="search" placeholder="Search Webpedia">
+      <button type="submit">Go</button>
+    </form>
+
+    <section id="toc">
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="#js">JavaScript</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </section>
+
+    <article id="html">
+      <h2>HTML - HyperText Markup Language</h2>
+      <section>
+        <p>HTML is the standard markup language for documents designed to be displayed in a web browser. It is often assisted by technologies such as CSS and JavaScript.<sup id="cite_ref-1"><a href="#cite_note-1">[1]</a></sup></p>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Logo" width="200">
+          <figcaption>HTML5 Official Logo</figcaption>
+        </figure>
+        <blockquote cite="https://en.wikipedia.org/wiki/HTML">
+          The HyperText Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser.
+        </blockquote>
+        <p>Example HTML:</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;My HTML Page&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;h1&gt;Welcome&lt;/h1&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>Keyboard shortcut to view HTML source: <kbd>Ctrl</kbd> + <kbd>U</kbd></p>
+      </section>
+      <section>
+        <h3>HTML Terminology</h3>
+        <dl>
+          <dt>Tag</dt>
+          <dd>An element like <code>&lt;p&gt;</code> or <code>&lt;a&gt;</code></dd>
+          <dt>Attribute</dt>
+          <dd>Provides additional information about an element</dd>
+          <dt>Element</dt>
+          <dd>The combination of opening tag, content, and closing tag</dd>
+        </dl>
+      </section>
+    </article>
+
+    <article id="css">
+      <h2>CSS - Cascading Style Sheets</h2>
+      <section>
+        <p>CSS is a style sheet language used for describing the look and formatting of a document written in HTML.<sup id="cite_ref-2"><a href="#cite_note-2">[2]</a></sup></p>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS Logo" width="150">
+          <figcaption>CSS3 Official Logo</figcaption>
+        </figure>
+        <pre><code>body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}</code></pre>
+        <table>
+          <caption>Basic CSS Properties</caption>
+          <thead>
+            <tr><th>Property</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>color</td><td>Text color</td></tr>
+            <tr><td>margin</td><td>Outer spacing</td></tr>
+            <tr><td>padding</td><td>Inner spacing</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </article>
+
+    <article id="js">
+      <h2>JavaScript - The Language of the Web</h2>
+      <section>
+        <p>JavaScript is a high-level programming language that enables interactive web pages. It is a core technology of the World Wide Web.<sup id="cite_ref-3"><a href="#cite_note-3">[3]</a></sup></p>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JS Logo" width="150">
+          <figcaption>JavaScript Logo</figcaption>
+        </figure>
+        <pre><code>console.log("Hello, JavaScript!");</code></pre>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/hdI2bqOjy3c" title="JavaScript Tutorial" allowfullscreen></iframe>
+        <p>Example output: <samp>JS Code Executed!</samp></p>
+      </section>
+    </article>
+
+    <article id="resources">
+      <h2>Learning Resources</h2>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/HTML">Wikipedia: HTML</a></li>
+        <li><a href="https://www.w3schools.com">W3Schools</a></li>
+        <li><a href="https://javascript.info">JavaScript.info</a></li>
+      </ul>
+      <template id="resourceCard">
+        <div class="card">
+          <h3>Resource Title</h3>
+          <p>This card template can be cloned using JavaScript to display multiple resources dynamically.</p>
+        </div>
+      </template>
+    </article>
+
+    <section id="citations">
+      <h2>References</h2>
+      <ol>
+        <li id="cite_note-1">Wikipedia contributors. (2024). <cite>HTML</cite>. Wikipedia. <a href="https://en.wikipedia.org/wiki/HTML">https://en.wikipedia.org/wiki/HTML</a></li>
+        <li id="cite_note-2">Wikipedia contributors. (2024). <cite>CSS</cite>. Wikipedia. <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">https://en.wikipedia.org/wiki/Cascading_Style_Sheets</a></li>
+        <li id="cite_note-3">Wikipedia contributors. (2024). <cite>JavaScript</cite>. Wikipedia. <a href="https://en.wikipedia.org/wiki/JavaScript">https://en.wikipedia.org/wiki/JavaScript</a></li>
+      </ol>
+    </section>
+  </main>
+
+  <aside>
+    <h3>Trivia</h3>
+    <p>HTML was created by <strong>Tim Berners-Lee</strong> in 1993.</p>
+    <p>Wikipedia uses MediaWiki software and is one of the largest reference websites in the world.</p>
+  </aside>
+
+  <footer>
+    <p>&copy; 2025 Mini Webpedia. Created by Tej for #100Days100Projects | Inspired by <a href="https://en.wikipedia.org">Wikipedia</a></p>
+  </footer>
+</body>
+</html>

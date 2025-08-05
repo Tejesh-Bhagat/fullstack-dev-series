@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎵 AudioVerse - Day 4 Music Website</title>
+</head>
+
+<body>
+  <!-- 🎵 Header with a background image -->
+  <header style="background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4') no-repeat center/cover; color: white; padding: 2rem; text-align: center;">
+    <h1>🎧 Welcome to AudioVerse</h1>
+    <p>Your daily dose of beats, vibes, and melodies!</p>
+  </header>
+
+  <!-- 🎧 Suggest a song form section -->
+  <section>
+    <h2>🎧 Suggest a Song</h2>
+    <form>
+      <label for="userSong">Your Favorite Song:</label><br />
+      <input type="text" id="userSong" name="userSong" placeholder="Song name..." /><br /><br />
+      <label for="mood">Mood:</label>
+      <select id="mood" name="mood">
+        <option>Happy</option>
+        <option>Sad</option>
+        <option>Chill</option>
+        <option>Energetic</option>
+      </select><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </section>
+
+  <!-- 🎶 Now playing section with audio and album image -->
+  <section>
+    <h2>Now Playing</h2>
+    <figure>
+      <img src="assets/Sultan.jpg" alt="Song Image" width="200">
+      <figcaption><strong>"Sultan Title Song"</strong> by Salman Khan, Sukhwinder Singh & Vishal–Shekhar</figcaption>
+    </figure>
+    <audio controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <!-- 🌟 Artist gallery with images and YouTube links -->
+  <section>
+    <h2>🎤 Featured Artists</h2>
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+      <a href="https://youtu.be/Y_dGio-KbT4?si=NuPO8a5vkEUDBTqy" target="_blank">
+        <img src="assets/ar.jpg" alt="A. R. Rahman" width="290">
+      </a>
+      <a href="https://www.youtube.com/watch?v=O5gwxm3NxFU" target="_blank">
+        <img src="assets/arijit.jpg" alt="Arijit Singh" width="290">
+      </a>
+      <a href="https://youtu.be/9pBQqShmRO0?si=4mrRo6SO3wFYK31U" target="_blank">
+        <img src="assets/Udit Narayan.jpg" alt="Udit Narayan" width="290">
+      </a>
+      <a href="https://youtu.be/5DuIvZxMoWQ?si=JdWS0ePD3W446cTM" target="_blank">
+        <img src="assets/Shankar Mahadevan.jpg" alt="Shankar Mahadevan" width="290">
+      </a>
+      <a href="https://youtu.be/blFaaF7oxn4?si=Z2MwmlhAXInUAhiQ" target="_blank">
+        <img src="assets/Sonu Nigam.jpg" alt="Sonu Nigam" width="290">
+      </a>
+    </div>
+  </section>
+
+  <!-- 🎵 Hindi Songs Playlist with images, audio, and download buttons -->
+  <section>
+    <h2>🎼 Hindi Songs Playlist</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+
+      <!-- Song Card -->
+      <div>
+        <img src="https://i.ytimg.com/vi/sUf2PtEZris/maxresdefault.jpg" width="150" alt="Shekhar Song 1">
+        <p><strong>Shaky - Sanju Rathod</strong></p>
+        <audio controls>
+          <source src="indian-flute-music-with-humming-2-263583.mp3" type="audio/mpeg">
+        </audio>
+        <br><a href="indian-flute-music-with-humming-2-263583.mp3" download><button>⬇️ Download</button></a>
+      </div>
+
+      <div>
+        <img src="https://i.pinimg.com/736x/b4/81/e3/b481e32abb7792287aa02f5aa0177afb.jpg" width="150" alt="Song 2">
+        <p><strong>Hindi Song 2</strong></p>
+        <audio controls>
+          <source src="night-sky-lofi-156772.mp3" type="audio/mpeg">
+        </audio>
+        <br><a href="night-sky-lofi-156772.mp3" download><button>⬇️ Download</button></a>
+      </div>
+
+      <div>
+        <img src="https://i.ytimg.com/vi/iYYmLVorpNM/hqdefault.jpg" width="150" alt="Song 3">
+        <p><strong>Hindi Song 3</strong></p>
+        <audio controls>
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mpeg">
+        </audio>
+        <br><a href="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" download><button>⬇️ Download</button></a>
+      </div>
+
+      <div>
+        <img src="https://i.ytimg.com/vi/0J2QdDbelmY/maxresdefault.jpg" width="150" alt="Song 4">
+        <p><strong>Hindi Song 4</strong></p>
+        <audio controls>
+          <source src="african-night-171020.mp3" type="audio/mpeg">
+        </audio>
+        <br><a href="african-night-171020.mp3" download><button>⬇️ Download</button></a>
+      </div>
+
+      <div>
+        <img src="https://i.ytimg.com/vi/yKNxeF4KMsY/maxresdefault.jpg" width="150" alt="Song 5">
+        <p><strong>Hindi Song 5</strong></p>
+        <audio controls>
+          <source src="traditional-indian-music-for-film-and-documentary-250312.mp3" type="audio/mpeg">
+        </audio>
+        <br><a href="traditional-indian-music-for-film-and-documentary-250312.mp3" download><button>⬇️ Download</button></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 🎬 Generic media download section -->
+  <section>
+    <h2>🎬 Download Media</h2>
+    <p>Click below to download featured files:</p>
+    <ul>
+      <li><a href="song.mp3" download>Download Sample Song (MP3)</a></li>
+      <li><a href="video.mp4" download>Download Sample Video (MP4)</a></li>
+      <li><a href="poster.jpg" download>Download Poster (JPG)</a></li>
+    </ul>
+  </section>
+
+  <!-- 🧾 Footer -->
+  <footer style="text-align: center; padding: 2rem; background: #222; color: #eee">
+    <p>&copy; 2025 AudioVerse | Built with ❤️ using only HTML | Day 4 of #100Days100Projects</p>
+  </footer>
+</body>
+
+</html>
+
+
+
+
