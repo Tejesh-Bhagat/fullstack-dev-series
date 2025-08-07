@@ -1,0 +1,127 @@
+/* === Global Body Styling === */
+body {
+  font-family: Arial, sans-serif;         /* Sets a clean, readable font */
+  margin: 0;                              /* Removes default browser margin */
+  padding: 2rem;                          /* Adds padding around the page */
+  background-color: #f0f0f0;              /* Light grey background */
+  line-height: 1.6;                       /* Improves readability */
+}
+
+/* === Headings (h1 and h2) Styling === */
+h1, h2 {
+  text-align: center;                     /* Centers heading text */
+  color: #2c3e50;                         /* Dark bluish-gray color */
+}
+
+/* === Section Container Styling === */
+section {
+  background: white;                      /* White background for content blocks */
+  margin: 2rem auto;                      /* Centers the section with spacing */
+  padding: 1.5rem;                        /* Adds internal spacing */
+  max-width: 900px;                       /* Limits width to 900px */
+  border-radius: 10px;                    /* Rounded corners */
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);  /* Soft shadow for depth */
+}
+
+/* === Example Box Layout === */
+.example-box {
+  margin-top: 1rem;                       /* Space above box */
+  padding: 1rem;                          /* Space inside box */
+  border: 2px dashed #ccc;               /* Dashed border */
+  background-color: #f9f9f9;             /* Light background color */
+}
+
+/* === Typography Demonstration Styling === */
+.text-example {
+  color: #333;                            /* Dark gray text */
+  font-size: 18px;                        /* Medium text size */
+  font-weight: bold;                     /* Bold text */
+  font-style: italic;                    /* Italic text */
+  text-decoration: underline;           /* Underlined text */
+  text-align: center;                   /* Centered text */
+  letter-spacing: 1px;                  /* Space between letters */
+  word-spacing: 5px;                    /* Space between words */
+  text-transform: uppercase;            /* Converts text to uppercase */
+}
+
+/* === Box Model Demo Styling === */
+.box-model {
+  width: 220px;                          /* Box width */
+  height: 120px;                         /* Box height */
+  padding: 15px;                         /* Space inside the box */
+  border: 5px solid #007bff;             /* Blue border */
+  margin: 30px auto;                     /* Centered with vertical spacing */
+  background-color: #e0f7fa;             /* Light teal background */
+  box-sizing: border-box;                /* Includes padding & border in width/height */
+}
+
+/* === Flexbox Container Styling === */
+.flex-container {
+  display: flex;                         /* Enables flex layout */
+  justify-content: space-around;        /* Spaces items evenly */
+  align-items: center;                  /* Aligns items vertically */
+  flex-wrap: wrap;                      /* Allows wrapping on smaller screens */
+}
+
+/* === Flex Items Styling === */
+.flex-item {
+  background-color: #ffcccb;            /* Light red background */
+  padding: 20px;                         /* Internal spacing */
+  margin: 10px;                          /* External spacing */
+  border-radius: 8px;                    /* Rounded corners */
+  width: 100px;                          /* Fixed width */
+  text-align: center;                    /* Centered text */
+}
+
+/* === Hover Effect Styling === */
+.hover-effect {
+  transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transition */
+  cursor: pointer;                                             /* Pointer cursor on hover */
+}
+
+.hover-effect:hover {
+  background-color: #d4edda;           /* Light green background on hover */
+  transform: scale(1.1);               /* Slight zoom effect */
+}
+
+/* === Positioning Example Container === */
+.position-example {
+  position: relative;                   /* Parent container for absolute positioning */
+  height: 150px;                        /* Container height */
+  background-color: #fff3cd;           /* Light yellow background */
+}
+
+/* === Absolutely Positioned Box === */
+.absolute-box {
+  position: absolute;                  /* Positioned relative to the parent */
+  top: 20px; left: 20px;               /* Positioned from top-left */
+  padding: 10px;                       /* Padding inside box */
+  background: #f8d7da;                 /* Light red background */
+  border: 1px solid #f5c6cb;           /* Soft red border */
+}
+
+/* === Transform Demo Styling === */
+.transform-example {
+  transition: transform 0.3s ease;     /* Smooth transform transition */
+  text-align: center;                  /* Center text */
+}
+
+.transform-example:hover {
+  transform: scale(1.2) rotate(5deg);  /* Scales up and rotates slightly on hover */
+}
+
+/* === Grid Layout Styling === */
+.grid-container {
+  display: grid;                       /* Enables grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 10px;                           /* Gap between items */
+  margin-top: 1rem;                    /* Spacing above */
+}
+
+/* === Individual Grid Item Styling === */
+.grid-item {
+  background-color: #d0e6ff;          /* Light blue background */
+  padding: 20px;                       /* Internal spacing */
+  text-align: center;                  /* Center text */
+  border-radius: 5px;                  /* Rounded corners */
+}
