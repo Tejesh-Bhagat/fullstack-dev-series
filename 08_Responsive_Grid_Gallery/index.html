@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Responsive Grid Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Dark Mode Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch">
+        <label for="theme-switch"></label>
+    </div>
+
+    <!-- Header -->
+    <!-- Header -->
+    <header class="header">
+        <h1>Dynamic Image Showcase</h1>
+        <p>Fully Responsive • Smooth Transitions • Stunning Design</p>
+    </header>
+
+    <!-- Category Filters -->
+    <div class="filters">
+        <input type="radio" id="filter-all" name="category" class="filter-btn" checked>
+        <label for="filter-all" class="filter-label">All</label>
+
+        <input type="radio" id="filter-nature" name="category" class="filter-btn">
+        <label for="filter-nature" class="filter-label">Nature</label>
+
+        <input type="radio" id="filter-travel" name="category" class="filter-btn">
+        <label for="filter-travel" class="filter-label">Travel</label>
+
+        <input type="radio" id="filter-food" name="category" class="filter-btn">
+        <label for="filter-food" class="filter-label">Food</label>
+
+        <input type="radio" id="filter-architecture" name="category" class="filter-btn">
+        <label for="filter-architecture" class="filter-label">Architecture</label>
+    </div>
+
+    <!-- Gallery Container -->
+    <div class="gallery-container">
+        <div class="gallery">
+            <!-- Nature Images -->
+            <a href="#modal6" class="gallery-item travel short" tabindex="0">
+                <img src="assets/berries-2986532_1280.jpg" alt="Tropical Beach" loading="lazy">
+
+            </a>
+
+            <a href="#modal7" class="gallery-item food medium" tabindex="0">
+                <img src="assets/blossom-5068555_1280.jpg" alt="Sushi Platter" loading="lazy">
+
+            </a>
+
+            <a href="#modal8" class="gallery-item architecture tall" tabindex="0">
+                <img src="assets/flower-2178507_1280.jpg" alt="Gothic Cathedral" loading="lazy">
+
+            </a>
+
+            <a href="#modal9" class="gallery-item nature short" tabindex="0">
+                <img src="assets/healthy-7213383_1280.jpg" alt="Ocean Sunset" loading="lazy">
+
+            </a>
+
+            <a href="#modal10" class="gallery-item travel medium" tabindex="0">
+                <img src="assets/img1.jpg" alt="Market Street" loading="lazy">
+
+            </a>
+
+            <a href="#modal11" class="gallery-item food tall" tabindex="0">
+                <img src="assets/img5.jpg" alt="Chocolate Dessert" loading="lazy">
+
+            </a>
+
+            <a href="#modal12" class="gallery-item architecture medium" tabindex="0">
+                <img src="assets/img2.jpg" alt="Modern Bridge" loading="lazy">
+
+            </a>
+            <a href="#modal1" class="gallery-item nature tall" tabindex="0">
+                <img src="assets/img6.jpg" alt="Mountain Lake" loading="lazy">
+
+            </a>
+
+            <a href="#modal2" class="gallery-item travel medium" tabindex="0">
+                <img src="assets/img7.jpg" alt="Ancient Temple" loading="lazy">
+
+            </a>
+
+            <a href="#modal4" class="gallery-item architecture tall" tabindex="0">
+                <img src="assets/img9.jpg" alt="Modern Skyscraper" loading="lazy">
+
+            </a>
+
+            <a href="#modal5" class="gallery-item nature medium" tabindex="0">
+                <img src="assets/img10.jpg" alt="Autumn Forest" loading="lazy">
+
+            </a>
+
+            <a href="#modal6" class="gallery-item travel short" tabindex="0">
+                <img src="assets/img11.jpg" alt="Tropical Beach" loading="lazy">
+
+            </a>
+
+            <a href="#modal7" class="gallery-item food medium" tabindex="0">
+                <img src="assets/img12.jpg" alt="Sushi Platter" loading="lazy">
+
+            </a>
+
+            <a href="#modal8" class="gallery-item architecture tall" tabindex="0">
+                <img src="assets/imh14.jpeg" alt="Gothic Cathedral" loading="lazy">
+
+            </a>
+
+            <a href="#modal9" class="gallery-item nature short" tabindex="0">
+                <img src="assets/ornamental-plant-7523304_1280.jpg" alt="Ocean Sunset" loading="lazy">
+
+            </a>
+
+            <a href="#modal10" class="gallery-item travel medium" tabindex="0">
+                <img src="assets/real-estate-9053405_1280.jpg" alt="Market Street" loading="lazy">
+
+            </a>
+
+            <a href="#modal11" class="gallery-item food tall" tabindex="0">
+                <img src="assets/real-estate-9265386_1280.jpg" alt="Chocolate Dessert" loading="lazy">
+
+            </a>
+
+            <a href="#modal12" class="gallery-item architecture medium" tabindex="0">
+                <img src="assets/restaurant-5521372_1280.jpg" alt="Modern Bridge" loading="lazy">
+
+            </a>
+           
+            
+            
+        </div>
+    </div>
+
+
+    <script>
+        // Dark mode toggle functionality
+        const themeSwitch = document.getElementById('theme-switch');
+        const body = document.body;
+
+        themeSwitch.addEventListener('change', () => {
+            if (themeSwitch.checked) {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            themeSwitch.checked = true;
+            body.setAttribute('data-theme', 'dark');
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    window.location.hash = '';
+                }
+            });
+        });
+
+        // Keyboard navigation for modals
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && window.location.hash.includes('modal')) {
+                window.location.hash = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
