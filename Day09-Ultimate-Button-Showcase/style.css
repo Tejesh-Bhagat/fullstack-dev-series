@@ -1,0 +1,3329 @@
+/* ===== RESET AND BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --accent-color: #f093fb;
+    --text-color: #333;
+    --bg-color: #f8f9fa;
+    --white: #ffffff;
+    --black: #000000;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== HEADER STYLES ===== */
+.header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="90" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 20px;
+    font-weight: 800;
+    position: relative;
+    z-index: 1;
+}
+
+.header p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    opacity: 0.9;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.stat {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* ===== NAVIGATION STYLES ===== */
+.navigation {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    gap: 10px;
+}
+
+.nav-list li {
+    margin: 0 5px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 12px 18px;
+    border-radius: 25px;
+    transition: var(--transition);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102,126,234,0.3);
+}
+
+/* ===== MAIN CONTENT STYLES ===== */
+.main {
+    padding: 60px 0;
+}
+
+.section {
+    margin-bottom: 100px;
+    scroll-margin-top: 100px;
+}
+
+.section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 50px;
+    text-align: center;
+    color: var(--text-color);
+    position: relative;
+    font-weight: 700;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+/* ===== BUTTON GRID STYLES ===== */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.button-item {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid #e9ecef;
+    position: relative;
+    overflow: hidden;
+}
+
+.button-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102,126,234,0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.button-item:hover::before {
+    left: 100%;
+}
+
+.button-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.button-item code {
+    display: block;
+    margin: 20px 0 10px;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 14px;
+    color: #666;
+    border: 1px solid #e9ecef;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.button-item code:hover {
+    background: #e9ecef;
+    color: var(--text-color);
+}
+
+.button-item .description {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+/* ===== BUTTON STYLES FROM UIVERSE.IO ===== */
+
+/* Letter Animation Button (from Uiverse.io by doniaskima) */
+.btn-53,
+.btn-53 *,
+.btn-53 :after,
+.btn-53 :before,
+.btn-53:after,
+.btn-53:before {
+    border: 0 solid;
+    box-sizing: border-box;
+}
+
+.btn-53 {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: button;
+    background-color: #000;
+    background-image: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 100%;
+    line-height: 1.5;
+    margin: 0;
+    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+    padding: 0;
+    border: 1px solid;
+    border-radius: 999px;
+    box-sizing: border-box;
+    display: block;
+    font-weight: 900;
+    overflow: hidden;
+    padding: 1.2rem 3rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.btn-53:disabled {
+    cursor: default;
+}
+
+.btn-53:-moz-focusring {
+    outline: auto;
+}
+
+.btn-53 svg {
+    display: block;
+    vertical-align: middle;
+}
+
+.btn-53 [hidden] {
+    display: none;
+}
+
+.btn-53 .original {
+    background: #fff;
+    color: #000;
+    display: grid;
+    inset: 0;
+    place-content: center;
+    position: absolute;
+    transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.btn-53:hover .original {
+    transform: translateY(100%);
+}
+
+.btn-53 .letters {
+    display: inline-flex;
+}
+
+.btn-53 span {
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.2s;
+}
+
+.btn-53 span:nth-child(2n) {
+    transform: translateY(15px);
+}
+
+.btn-53:hover span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-53:hover span:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.btn-53:hover span:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.btn-53:hover span:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.btn-53:hover span:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.btn-53:hover span:nth-child(6) {
+    transition-delay: 0.5s;
+}
+
+/* Play Button with Icon Animation (from Uiverse.io by elijahgummer) */
+.button-with-icon {
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #0f988e;
+    font-family: "Istok Web", sans-serif;
+    letter-spacing: 1px;
+    padding: 0 12px;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 3px;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+    transform: translateY(0px);
+    position: relative;
+    box-shadow: inset 0 30px 30px -15px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.3), inset 0 1px 20px rgba(0, 0, 0, 0), 0 3px 0 #0f988e, 0 3px 2px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: #15ccbe;
+    color: white;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    transition: 150ms all ease-in-out;
+}
+
+.button-with-icon .icon {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    transition: all 0.5s ease-in-out;
+}
+
+.button-with-icon:active {
+    transform: translateY(3px);
+    box-shadow: inset 0 16px 2px -15px rgba(0, 0, 0, 0), inset 0 0 0 1px rgba(255, 255, 255, 0.15), inset 0 1px 20px rgba(0, 0, 0, 0.1), 0 0 0 #0f988e, 0 0 0 2px rgba(255, 255, 255, 0.5), 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.button-with-icon:hover .text {
+    transform: translateX(80px);
+}
+
+.button-with-icon:hover .icon {
+    transform: translate(23px);
+}
+
+.text {
+    transition: all 0.5s ease-in-out;
+}
+
+/* Diagonal Wipe Effect (from Uiverse.io by adamgiebl) */
+.btn-wipe {
+    border: none;
+    display: block;
+    position: relative;
+    padding: 0.7em 2.4em;
+    font-size: 18px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: royalblue;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+}
+
+.btn-wipe span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid royalblue;
+}
+
+.btn-wipe span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: var(--lightgray, #f0f0f0);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+}
+
+.btn-wipe:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: royalblue;
+}
+
+.btn-wipe:hover {
+    color: white;
+}
+
+.btn-wipe:active span::before {
+    background: #2751cd;
+}
+
+/* Circle Expand Effect (from Uiverse.io by Randdose) */
+.btn-circle-expand {
+    all: unset;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0.6em 2em;
+    border: mediumspringgreen solid 0.15em;
+    border-radius: 0.25em;
+    color: mediumspringgreen;
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 300ms, color 300ms;
+    user-select: none;
+}
+
+.btn-circle-expand p {
+    z-index: 1;
+}
+
+.btn-circle-expand:hover {
+    color: #212121;
+}
+
+.btn-circle-expand:active {
+    border-color: teal;
+}
+
+.btn-circle-expand::after,
+.btn-circle-expand::before {
+    content: "";
+    position: absolute;
+    width: 9em;
+    aspect-ratio: 1;
+    background: mediumspringgreen;
+    opacity: 50%;
+    border-radius: 50%;
+    transition: transform 500ms, background 300ms;
+}
+
+.btn-circle-expand::before {
+    left: 0;
+    transform: translateX(-8em);
+}
+
+.btn-circle-expand::after {
+    right: 0;
+    transform: translateX(8em);
+}
+
+.btn-circle-expand:hover:before {
+    transform: translateX(-1em);
+}
+
+.btn-circle-expand:hover:after {
+    transform: translateX(1em);
+}
+
+.btn-circle-expand:active:before,
+.btn-circle-expand:active:after {
+    background: teal;
+}
+
+/* Multi-layer Shadow (from Uiverse.io by Mike11jr) */
+.btn-shadow-layers {
+    width: 130px;
+    height: 40px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: #171717;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all .4s;
+}
+
+.btn-shadow-layers:hover {
+    border-radius: 5px;
+    transform: translateY(-10px);
+    box-shadow: 0 7px 0 -2px #f85959, 0 15px 0 -4px #39a2db, 0 16px 10px -3px #39a2db;
+}
+
+.btn-shadow-layers:active {
+    transition: all 0.2s;
+    transform: translateY(-5px);
+    box-shadow: 0 2px 0 -2px #f85959, 0 8px 0 -4px #39a2db, 0 12px 10px -3px #39a2db;
+}
+
+/* Text Stroke Animation Button (from Uiverse.io by satyamchaudharydev) */
+.button-stroke {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.6);
+    --animation-color: #37FF8B;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+.hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+}
+
+.button-stroke:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color));
+}
+
+/* Gradient Glow (from Uiverse.io by mrtqzbek11) */
+.btn-gradient-glow {
+    width: 165px;
+    height: 62px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 1rem;
+    border: none;
+    position: relative;
+    background: #100720;
+    transition: 0.1s;
+}
+
+.btn-gradient-glow::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    filter: blur(15px);
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.btn-gradient-glow:active {
+    transform: scale(0.9) rotate(3deg);
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    transition: 0.5s;
+}
+
+/* Purple Glow Button (from Uiverse.io by cssbuttons-io) */
+.btn-purple-glow {
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color), 0 0 4em 1em var(--glow-spread-color), inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+}
+
+.btn-purple-glow::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.btn-purple-glow:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color), 0 0 4em 2em var(--glow-spread-color), inset 0 0 .75em .25em var(--glow-color);
+}
+
+.btn-purple-glow:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color), 0 0 2.5em 2em var(--glow-spread-color), inset 0 0 .5em .25em var(--glow-color);
+}
+
+/* Ripple Wave Effect (from Uiverse.io by mrhyddenn) */
+.btn-ripple-wave {
+    background: transparent;
+    position: relative;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgb(40, 144, 241);
+    border-radius: 25px;
+    outline: none;
+    overflow: hidden;
+    color: rgb(40, 144, 241);
+    transition: color 0.3s 0.1s ease-out;
+    text-align: center;
+}
+
+.btn-ripple-wave span {
+    margin: 10px;
+}
+
+.btn-ripple-wave::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    border-radius: 50%;
+    display: block;
+    width: 20em;
+    height: 20em;
+    left: -5em;
+    text-align: center;
+    transition: box-shadow 0.5s ease-out;
+    z-index: -1;
+}
+
+.btn-ripple-wave:hover {
+    color: #fff;
+    border: 1px solid rgb(40, 144, 241);
+}
+
+.btn-ripple-wave:hover::before {
+    box-shadow: inset 0 0 0 10em rgb(40, 144, 241);
+}
+
+/* 3D Perspective Button (from Uiverse.io by mobinkakei) */
+.btn-3d-perspective {
+    --color1: #1a8516;
+    --color2: #236b19;
+    perspective: 1000px;
+    padding: 1em 1em;
+    background: linear-gradient(var(--color1), var(--color2));
+    border: none;
+    outline: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 0 10px 10px #000;
+    cursor: pointer;
+    transform: rotateX(70deg) rotateZ(30deg);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.btn-3d-perspective::before {
+    content: "";
+    width: 100%;
+    height: 15px;
+    background-color: var(--color2);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+
+.btn-3d-perspective::after {
+    content: "";
+    width: 15px;
+    height: 100%;
+    background-color: var(--color1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotateY(-90deg);
+    transform-origin: right;
+}
+
+.btn-3d-perspective:hover {
+    transform: rotateX(30deg) rotateZ(0);
+}
+
+/* Send Button with Flying Animation (from Uiverse.io by adamgiebl) */
+.btn-send {
+    font-family: inherit;
+    font-size: 20px;
+    background: royalblue;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btn-send span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-send svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-send:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.btn-send:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.btn-send:hover span {
+    transform: translateX(5em);
+}
+
+.btn-send:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+    to {
+        transform: translateY(-0.1em);
+    }
+}
+
+/* Refresh Button with Spin Animation (from Uiverse.io by JaydipPrajapati1910) */
+.btn-refresh {
+    color: white;
+    background-color: #222;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+}
+
+.btn-refresh:hover {
+    background-color: #333;
+}
+
+.btn-refresh svg {
+    display: inline;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-right: 0.75rem;
+    color: white;
+}
+
+.btn-refresh:focus svg {
+    animation: spin_357 0.5s linear;
+}
+
+@keyframes spin_357 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Logout Button with Expanding Animation (from Uiverse.io by vinodjangid07) */
+.btn-logout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
+}
+
+.sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign svg {
+    width: 17px;
+}
+
+.sign svg path {
+    fill: white;
+}
+
+.text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+}
+
+.btn-logout:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+.btn-logout:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+}
+
+.btn-logout:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+}
+
+.btn-logout:active {
+    transform: translate(2px ,2px);
+}
+
+/* Glassmorphism Social Buttons (from Uiverse.io by Itskrish01) */
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.btn-glass-social {
+    padding: 20px;
+    border-radius: 50%;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.1);
+    background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glass-white {
+    border-color: rgba(255,255,255,0.1);
+}
+
+.btn-glass-white:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 20px 25px rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.3);
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.4));
+}
+
+.btn-glass-green {
+    border-color: rgba(34,197,94,0.2);
+}
+
+.btn-glass-green:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 20px 25px rgba(34,197,94,0.3);
+    border-color: rgba(34,197,94,0.5);
+    background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(0,0,0,0.4));
+}
+
+.glass-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.7s ease;
+}
+
+.btn-glass-social:hover .glass-shine {
+    transform: translateX(100%);
+}
+
+.relative {
+    position: relative;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.w-7 {
+    width: 1.75rem;
+}
+
+.h-7 {
+    height: 1.75rem;
+}
+
+.fill-current {
+    fill: currentColor;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-green-500 {
+    color: rgb(34 197 94);
+}
+
+/* Social Tooltip Buttons (from Uiverse.io by david-mohseni) */
+.social-wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+}
+
+.social-wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.social-wrapper .icon:hover span,
+.social-wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.social-wrapper .facebook:hover,
+.social-wrapper .facebook:hover .tooltip,
+.social-wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+}
+
+.social-wrapper .twitter:hover,
+.social-wrapper .twitter:hover .tooltip,
+.social-wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+}
+
+.social-wrapper .instagram:hover,
+.social-wrapper .instagram:hover .tooltip,
+.social-wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #fff;
+}
+
+/* Google Play Button (from Uiverse.io by Yaya12085) */
+.playstore-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 9999px;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 0.625rem 1.5rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    outline: 0;
+    transition: all .2s ease;
+    text-decoration: none;
+}
+
+.playstore-button:hover {
+    background-color: transparent;
+    color: rgba(0, 0, 0, 1);
+}
+
+.playstore-button .icon {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.playstore-button .texts {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.playstore-button .text-1 {
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.playstore-button .text-2 {
+    font-weight: 600;
+}
+
+/* Discord Light Button (from Uiverse.io by kamehame-ha) */
+.light-button button.bt {
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.light-button button.bt .button-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    background-color: #0a0a0a;
+    border-radius: 5px;
+    color: #0f0f0f;
+    font-weight: 700;
+    transition: 300ms;
+    outline: #0f0f0f 2px solid;
+    outline-offset: 20;
+}
+
+.light-button button.bt .button-holder svg {
+    height: 50px;
+    fill: #0f0f0f;
+    transition: 300ms;
+}
+
+.light-button button.bt .light-holder {
+    position: absolute;
+    height: 200px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.light-button button.bt .light-holder .dot {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #0a0a0a;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.light-button button.bt .light-holder .light {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+    background: transparent;
+}
+
+.light-button button.bt:hover .button-holder svg {
+    fill: rgba(88, 101, 242, 1);
+}
+
+.light-button button.bt:hover .button-holder {
+    color: rgba(88, 101, 242, 1);
+    outline: rgba(88, 101, 242, 1) 2px solid;
+    outline-offset: 2px;
+}
+
+.light-button button.bt:hover .light-holder .light {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(88, 101, 242, 1) 0%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Flower Animation Button (from Uiverse.io by yaroslavas2001) */
+.btn-flowers {
+    height: 4em;
+    width: 12em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0px solid black;
+    cursor: pointer;
+}
+
+.btn-flowers .wrapper {
+    height: 2em;
+    width: 8em;
+    position: relative;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-flowers .text {
+    font-size: 17px;
+    z-index: 1;
+    color: #000;
+    padding: 4px 12px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.7);
+    transition: all 0.5s ease;
+}
+
+.btn-flowers .flower {
+    display: grid;
+    grid-template-columns: 1em 1em;
+    position: absolute;
+    transition: grid-template-columns 0.8s ease;
+}
+
+.btn-flowers .flower1 {
+    top: -12px;
+    left: -13px;
+    transform: rotate(5deg);
+}
+
+.btn-flowers .flower2 {
+    bottom: -5px;
+    left: 8px;
+    transform: rotate(35deg);
+}
+
+.btn-flowers .flower3 {
+    bottom: -15px;
+    transform: rotate(0deg);
+}
+
+.btn-flowers .flower4 {
+    top: -14px;
+    transform: rotate(15deg);
+}
+
+.btn-flowers .flower5 {
+    right: 11px;
+    top: -3px;
+    transform: rotate(25deg);
+}
+
+.btn-flowers .flower6 {
+    right: -15px;
+    bottom: -15px;
+    transform: rotate(30deg);
+}
+
+.btn-flowers .petal {
+    height: 1em;
+    width: 1em;
+    border-radius: 40% 70% / 7% 90%;
+    background: linear-gradient(#07a6d7, #93e0ee);
+    border: 0.5px solid #96d1ec;
+    z-index: 0;
+    transition: width 0.8s ease, height 0.8s ease;
+}
+
+.btn-flowers .two {
+    transform: rotate(90deg);
+}
+
+.btn-flowers .three {
+    transform: rotate(270deg);
+}
+
+.btn-flowers .four {
+    transform: rotate(180deg);
+}
+
+.btn-flowers:hover .petal {
+    background: linear-gradient(#0761d7, #93bdee);
+    border: 0.5px solid #96b4ec;
+}
+
+.btn-flowers:hover .flower {
+    grid-template-columns: 1.5em 1.5em;
+}
+
+.btn-flowers:hover .flower .petal {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.btn-flowers:hover .text {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.btn-flowers:hover div.flower1 {
+    animation: 15s linear 0s normal none infinite running flower1;
+}
+
+@keyframes flower1 {
+    0% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(365deg);
+    }
+}
+
+.btn-flowers:hover div.flower2 {
+    animation: 13s linear 1s normal none infinite running flower2;
+}
+
+@keyframes flower2 {
+    0% {
+        transform: rotate(35deg);
+    }
+    100% {
+        transform: rotate(-325deg);
+    }
+}
+
+.btn-flowers:hover div.flower3 {
+    animation: 16s linear 1s normal none infinite running flower3;
+}
+
+@keyframes flower3 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-flowers:hover div.flower4 {
+    animation: 17s linear 1s normal none infinite running flower4;
+}
+
+@keyframes flower4 {
+    0% {
+        transform: rotate(15deg);
+    }
+    100% {
+        transform: rotate(375deg);
+    }
+}
+
+.btn-flowers:hover div.flower5 {
+    animation: 20s linear 1s normal none infinite running flower5;
+}
+
+@keyframes flower5 {
+    0% {
+        transform: rotate(25deg);
+    }
+    100% {
+        transform: rotate(-335deg);
+    }
+}
+
+.btn-flowers:hover div.flower6 {
+    animation: 15s linear 1s normal none infinite running flower6;
+}
+
+@keyframes flower6 {
+    0% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(390deg);
+    }
+}
+
+/* Entry Button with Arrow Animation (from Uiverse.io by ryota1231) */
+.animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: rgb(94, 23, 111);
+    border-radius: 100px;
+    font-weight: 600;
+    color: #1f387e;
+    box-shadow: 0 0 0 2px #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: #1f387e;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+    right: 16px;
+}
+
+.animated-button .arr-2 {
+    left: -25%;
+}
+
+.animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #c5e5e4;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+    right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+    left: 16px;
+}
+
+.animated-button:hover .text {
+    transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+    fill: #1f387e;
+}
+
+.animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px greenyellow;
+}
+
+.animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+}
+
+/* Continue Application Button (from Uiverse.io by Nawsome) */
+.continue-application {
+    --color: #fff;
+    --background: #404660;
+    --background-hover: #3A4059;
+    --background-left: #2B3044;
+    --folder: #F3E9CB;
+    --folder-inner: #BEB393;
+    --paper: #FFFFFF;
+    --paper-lines: #BBC1E1;
+    --paper-behind: #E1E6F9;
+    --pencil-cap: #fff;
+    --pencil-top: #275EFE;
+    --pencil-middle: #fff;
+    --pencil-bottom: #5C86FF;
+    --shadow: rgba(13, 15, 25, .2);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    padding: 17px 29px 17px 69px;
+    transition: background 0.3s;
+    color: var(--color);
+    background: var(--bg, var(--background));
+}
+
+.continue-application > div {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 53px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 5px 0 0 5px;
+    background: var(--background-left);
+}
+
+.continue-application > div .folder {
+    width: 23px;
+    height: 27px;
+    position: absolute;
+    left: 15px;
+    top: 13px;
+}
+
+.continue-application > div .folder .top {
+    left: 0;
+    top: 0;
+    z-index: 2;
+    position: absolute;
+    transform: translateX(var(--fx, 0));
+    transition: transform 0.4s ease var(--fd, 0.3s);
+}
+
+.continue-application > div .folder .top svg {
+    width: 24px;
+    height: 27px;
+    display: block;
+    fill: var(--folder);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease var(--fds, 0.45s);
+    transform: perspective(120px) rotateY(var(--fr, 0deg));
+}
+
+.continue-application > div .folder:before,
+.continue-application > div .folder:after,
+.continue-application > div .folder .paper {
+    content: "";
+    position: absolute;
+    left: var(--l, 0);
+    top: var(--t, 0);
+    width: var(--w, 100%);
+    height: var(--h, 100%);
+    border-radius: 1px;
+    background: var(--b, var(--folder-inner));
+}
+
+.continue-application > div .folder:before {
+    box-shadow: 0 1.5px 3px var(--shadow), 0 2.5px 5px var(--shadow), 0 3.5px 7px var(--shadow);
+    transform: translateX(var(--fx, 0));
+    transition: transform 0.4s ease var(--fd, 0.3s);
+}
+
+.continue-application > div .folder:after,
+.continue-application > div .folder .paper {
+    --l: 1px;
+    --t: 1px;
+    --w: 21px;
+    --h: 25px;
+    --b: var(--paper-behind);
+}
+
+.continue-application > div .folder:after {
+    transform: translate(var(--pbx, 0), var(--pby, 0));
+    transition: transform 0.4s ease var(--pbd, 0s);
+}
+
+.continue-application > div .folder .paper {
+    z-index: 1;
+    --b: var(--paper);
+}
+
+.continue-application > div .folder .paper:before,
+.continue-application > div .folder .paper:after {
+    content: "";
+    width: var(--wp, 14px);
+    height: 2px;
+    border-radius: 1px;
+    transform: scaleY(0.5);
+    left: 3px;
+    top: var(--tp, 3px);
+    position: absolute;
+    background: var(--paper-lines);
+    box-shadow: 0 12px 0 0 var(--paper-lines), 0 24px 0 0 var(--paper-lines);
+}
+
+.continue-application > div .folder .paper:after {
+    --tp: 6px;
+    --wp: 10px;
+}
+
+.continue-application > div .pencil {
+    height: 2px;
+    width: 3px;
+    border-radius: 1px 1px 0 0;
+    top: 8px;
+    left: 105%;
+    position: absolute;
+    z-index: 3;
+    transform-origin: 50% 19px;
+    background: var(--pencil-cap);
+    transform: translateX(var(--pex, 0)) rotate(35deg);
+    transition: transform 0.4s ease var(--pbd, 0s);
+}
+
+.continue-application > div .pencil:before,
+.continue-application > div .pencil:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: var(--b, linear-gradient(var(--pencil-top) 55%, var(--pencil-middle) 55.1%, var(--pencil-middle) 60%, var(--pencil-bottom) 60.1%));
+    width: var(--w, 5px);
+    height: var(--h, 20px);
+    border-radius: var(--br, 2px 2px 0 0);
+    top: var(--t, 2px);
+    left: var(--l, -1px);
+}
+
+.continue-application > div .pencil:before {
+    -webkit-clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
+    clip-path: polygon(0 5%, 5px 5%, 5px 17px, 50% 20px, 0 17px);
+}
+
+.continue-application > div .pencil:after {
+    --b: none;
+    --w: 3px;
+    --h: 6px;
+    --br: 0 2px 1px 0;
+    --t: 3px;
+    --l: 3px;
+    border-top: 1px solid var(--pencil-top);
+    border-right: 1px solid var(--pencil-top);
+}
+
+.continue-application:hover {
+    --cx: 2px;
+    --bg: var(--background-hover);
+    --fx: -40px;
+    --fr: -60deg;
+    --fd: .15s;
+    --fds: 0s;
+    --pbx: 3px;
+    --pby: -3px;
+    --pbd: .15s;
+    --pex: -24px;
+}
+
+/* Payments Button (from Uiverse.io by Creatlydev) */
+.btn-payments {
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+}
+
+.button-decor {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr);
+    transform: translateX(-100%);
+    transition: transform .3s;
+    z-index: 0;
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.button__icon {
+    width: 48px;
+    height: 40px;
+    background-color: var(--clr);
+    display: grid;
+    place-items: center;
+}
+
+.button__text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.btn-payments:hover .button__text {
+    color: #fff;
+}
+
+.btn-payments:hover .button-decor {
+    transform: translate(0);
+}
+
+/* Generate Site Button (from Uiverse.io by MuhammadHasann) */
+.btn-generate {
+    --black-700: hsla(0 0% 12% / 1);
+    --border_radius: 9999px;
+    --transtion: 0.3s ease-in-out;
+    --offset: 2px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transform-origin: center;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--border_radius);
+    transform: scale(calc(1 + (var(--active, 0) * 0.1)));
+    transition: transform var(--transtion);
+}
+
+.btn-generate::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: var(--black-700);
+    border-radius: var(--border_radius);
+    box-shadow: inset 0 0.5px hsl(0, 0%, 100%), inset 0 -1px 2px 0 hsl(0, 0%, 0%), 0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))), 0 0 0 calc(var(--active, 0) * 0.375rem) hsl(260 97% 50% / 0.75);
+    transition: all var(--transtion);
+    z-index: 0;
+}
+
+.btn-generate::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: hsla(260 97% 61% / 0.75);
+    background-image: radial-gradient(at 51% 89%, hsla(266, 45%, 74%, 1) 0px, transparent 50%), radial-gradient(at 100% 100%, hsla(266, 36%, 60%, 1) 0px, transparent 50%), radial-gradient(at 22% 91%, hsla(266, 36%, 60%, 1) 0px, transparent 50%);
+    background-position: top;
+    opacity: var(--active, 0);
+    border-radius: var(--border_radius);
+    transition: opacity var(--transtion);
+    z-index: 2;
+}
+
+.btn-generate:is(:hover, :focus-visible) {
+    --active: 1;
+}
+
+.btn-generate:active {
+    transform: scale(1);
+}
+
+.btn-generate .dots_border {
+    --size_border: calc(100% + 2px);
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--size_border);
+    height: var(--size_border);
+    background-color: transparent;
+    border-radius: var(--border_radius);
+    z-index: -10;
+}
+
+.btn-generate .dots_border::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: left;
+    transform: rotate(0deg);
+    width: 100%;
+    height: 2rem;
+    background-color: white;
+    mask: linear-gradient(transparent 0%, white 120%);
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.btn-generate .sparkle {
+    position: relative;
+    z-index: 10;
+    width: 1.75rem;
+}
+
+.btn-generate .sparkle .path {
+    fill: currentColor;
+    stroke: currentColor;
+    transform-origin: center;
+    color: hsl(0, 0%, 100%);
+}
+
+.btn-generate:is(:hover, :focus) .sparkle .path {
+    animation: path 1.5s linear 0.5s infinite;
+}
+
+.btn-generate .sparkle .path:nth-child(1) {
+    --scale_path_1: 1.2;
+}
+
+.btn-generate .sparkle .path:nth-child(2) {
+    --scale_path_2: 1.2;
+}
+
+.btn-generate .sparkle .path:nth-child(3) {
+    --scale_path_3: 1.2;
+}
+
+@keyframes path {
+    0%, 34%, 71%, 100% {
+        transform: scale(1);
+    }
+    17% {
+        transform: scale(var(--scale_path_1, 1));
+    }
+    49% {
+        transform: scale(var(--scale_path_2, 1));
+    }
+    83% {
+        transform: scale(var(--scale_path_3, 1));
+    }
+}
+
+.btn-generate .text_button {
+    position: relative;
+    z-index: 10;
+    background-image: linear-gradient(90deg, hsla(0 0% 100% / 1) 0%, hsla(0 0% 100% / var(--active, 0)) 120%);
+    background-clip: text;
+    font-size: 1rem;
+    color: transparent;
+}
+
+/* Floating Particles Button (from Uiverse.io by ilkhoeri) */
+.btn-floating-particles {
+    --h-button: 48px;
+    --w-button: 102px;
+    --round: 0.75rem;
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    background: radial-gradient(65.28% 65.28% at 50% 100%, rgba(223, 113, 255, 0.8) 0%, rgba(223, 113, 255, 0) 100%), linear-gradient(0deg, #7a5af8, #7a5af8);
+    border-radius: var(--round);
+    border: none;
+    outline: none;
+    padding: 12px 18px;
+}
+
+.btn-floating-particles::before,
+.btn-floating-particles::after {
+    content: "";
+    position: absolute;
+    inset: var(--space);
+    transition: all 0.5s ease-in-out;
+    border-radius: calc(var(--round) - var(--space));
+    z-index: 0;
+}
+
+.btn-floating-particles::before {
+    --space: 1px;
+    background: linear-gradient(177.95deg, rgba(255, 255, 255, 0.19) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.btn-floating-particles::after {
+    --space: 2px;
+    background: radial-gradient(65.28% 65.28% at 50% 100%, rgba(223, 113, 255, 0.8) 0%, rgba(223, 113, 255, 0) 100%), linear-gradient(0deg, #7a5af8, #7a5af8);
+}
+
+.btn-floating-particles:active {
+    transform: scale(0.95);
+}
+
+.fold {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+    background: radial-gradient(100% 75% at 55%, rgba(223, 113, 255, 0.8) 0%, rgba(223, 113, 255, 0) 100%);
+    box-shadow: 0 0 3px black;
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: var(--round);
+}
+
+.fold::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150%;
+    height: 150%;
+    transform: rotate(45deg) translateX(0%) translateY(-18px);
+    background-color: #e8e8e8;
+    pointer-events: none;
+}
+
+.btn-floating-particles:hover .fold {
+    margin-top: -1rem;
+    margin-right: -1rem;
+}
+
+.points_wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.points_wrapper .point {
+    bottom: -10px;
+    position: absolute;
+    animation: floating-points infinite ease-in-out;
+    pointer-events: none;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 9999px;
+}
+
+@keyframes floating-points {
+    0% {
+        transform: translateY(0);
+    }
+    85% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-55px);
+        opacity: 0;
+    }
+}
+
+.points_wrapper .point:nth-child(1) {
+    left: 10%;
+    opacity: 1;
+    animation-duration: 2.35s;
+    animation-delay: 0.2s;
+}
+
+.points_wrapper .point:nth-child(2) {
+    left: 30%;
+    opacity: 0.7;
+    animation-duration: 2.5s;
+    animation-delay: 0.5s;
+}
+
+.points_wrapper .point:nth-child(3) {
+    left: 25%;
+    opacity: 0.8;
+    animation-duration: 2.2s;
+    animation-delay: 0.1s;
+}
+
+.points_wrapper .point:nth-child(4) {
+    left: 44%;
+    opacity: 0.6;
+    animation-duration: 2.05s;
+}
+
+.points_wrapper .point:nth-child(5) {
+    left: 50%;
+    opacity: 1;
+    animation-duration: 1.9s;
+}
+
+.points_wrapper .point:nth-child(6) {
+    left: 75%;
+    opacity: 0.5;
+    animation-duration: 1.5s;
+    animation-delay: 1.5s;
+}
+
+.points_wrapper .point:nth-child(7) {
+    left: 88%;
+    opacity: 0.9;
+    animation-duration: 2.2s;
+    animation-delay: 0.2s;
+}
+
+.points_wrapper .point:nth-child(8) {
+    left: 58%;
+    opacity: 0.8;
+    animation-duration: 2.25s;
+    animation-delay: 0.2s;
+}
+
+.points_wrapper .point:nth-child(9) {
+    left: 98%;
+    opacity: 0.6;
+    animation-duration: 2.6s;
+    animation-delay: 0.1s;
+}
+
+.points_wrapper .point:nth-child(10) {
+    left: 65%;
+    opacity: 1;
+    animation-duration: 2.5s;
+    animation-delay: 0.2s;
+}
+
+.inner {
+    z-index: 2;
+    gap: 6px;
+    position: relative;
+    width: 100%;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    transition: color 0.2s ease-in-out;
+}
+
+.inner svg.icon {
+    width: 18px;
+    height: 18px;
+    transition: fill 0.1s linear;
+}
+
+.btn-floating-particles:focus svg.icon {
+    fill: white;
+}
+
+.btn-floating-particles:hover svg.icon {
+    fill: transparent;
+    animation: dasharray 1s linear forwards, filled 0.1s linear forwards 0.95s;
+}
+
+@keyframes dasharray {
+    from {
+        stroke-dasharray: 0 0 0 0;
+    }
+    to {
+        stroke-dasharray: 68 68 0 0;
+    }
+}
+
+@keyframes filled {
+    to {
+        fill: white;
+    }
+}
+
+/* ===== ADDITIONAL CUSTOM BUTTON STYLES ===== */
+
+/* Typewriter Effect Button */
+.btn-typewriter {
+    background: #2c3e50;
+    color: #ecf0f1;
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-typewriter::after {
+    content: '|';
+    animation: blink 1s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Text Reveal Button */
+.btn-text-reveal {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+.btn-text-reveal .text-1,
+.btn-text-reveal .text-2 {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.btn-text-reveal .text-2 {
+    transform: translateX(-100%);
+    position: absolute;
+}
+
+.btn-text-reveal:hover .text-1 {
+    transform: translateX(100%);
+}
+
+.btn-text-reveal:hover .text-2 {
+    transform: translateX(0);
+}
+
+/* Additional Creative Buttons */
+.btn-hexagon {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    position: relative;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+    transition: all 0.3s ease;
+}
+
+.btn-hexagon:hover {
+    transform: scale(1.1);
+    background: #2980b9;
+}
+
+.btn-diamond {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+.btn-diamond:hover {
+    transform: rotate(45deg) scale(1.1);
+    background: #c0392b;
+}
+
+.btn-arrow {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 30px 12px 20px;
+    cursor: pointer;
+    position: relative;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
+    transition: all 0.3s ease;
+}
+
+.btn-arrow:hover {
+    background: #229954;
+    transform: translateX(5px);
+}
+
+/* Isometric Button */
+.btn-isometric {
+    background: #9b59b6;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    position: relative;
+    transform: perspective(500px) rotateX(15deg) rotateY(-15deg);
+    box-shadow: 5px 5px 0 #8e44ad, 10px 10px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-isometric:hover {
+    transform: perspective(500px) rotateX(0deg) rotateY(0deg);
+    box-shadow: 2px 2px 0 #8e44ad, 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+/* Cube Flip Button */
+.btn-cube-flip {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    perspective: 1000px;
+    width: 120px;
+    height: 50px;
+}
+
+.cube {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.btn-cube-flip:hover .cube {
+    transform: rotateX(180deg);
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #34495e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.face.front {
+    transform: translateZ(25px);
+}
+
+.face.back {
+    transform: rotateX(180deg) translateZ(25px);
+    background: #2c3e50;
+}
+
+/* Depth Press Button */
+.btn-depth-press {
+    background: #f39c12;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 8px 0 #d68910, 0 12px 20px rgba(0,0,0,0.3);
+    transition: all 0.1s ease;
+}
+
+.btn-depth-press:hover {
+    transform: translateY(2px);
+    box-shadow: 0 6px 0 #d68910, 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.btn-depth-press:active {
+    transform: translateY(8px);
+    box-shadow: 0 0 0 #d68910, 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Neon Border Button */
+.btn-neon-border {
+    background: transparent;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.btn-neon-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #00ffff, transparent);
+    transition: left 0.5s;
+}
+
+.btn-neon-border:hover::before {
+    left: 100%;
+}
+
+.btn-neon-border:hover {
+    box-shadow: 0 0 20px #00ffff, inset 0 0 20px rgba(0,255,255,0.1);
+}
+
+/* Plasma Glow Button */
+.btn-plasma-glow {
+    background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff);
+    background-size: 300% 300%;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 25px;
+    animation: plasma 3s ease infinite;
+    box-shadow: 0 0 30px rgba(255,0,110,0.5);
+}
+
+@keyframes plasma {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Rainbow Gradient Button */
+.btn-rainbow {
+    background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff0080);
+    background-size: 400% 400%;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 25px;
+    animation: rainbow 3s ease infinite;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Holographic Button */
+.btn-holographic {
+    background: linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0, #ff0080);
+    background-size: 400% 400%;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    animation: holographic 3s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-holographic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.6s;
+}
+
+.btn-holographic:hover::before {
+    left: 100%;
+}
+
+@keyframes holographic {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Sunset Gradient Button */
+.btn-sunset {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    color: #333;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(255,154,158,0.4);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-sunset:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255,154,158,0.6);
+}
+
+/* Toggle Switch Button */
+.btn-toggle-switch {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.switch-track {
+    width: 50px;
+    height: 25px;
+    background: #ccc;
+    border-radius: 25px;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.btn-toggle-switch[data-state="on"] .switch-track {
+    background: #4CAF50;
+}
+
+.switch-thumb {
+    width: 21px;
+    height: 21px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.btn-toggle-switch[data-state="on"] .switch-thumb {
+    transform: translateX(25px);
+}
+
+/* Progress Fill Button */
+.btn-progress-fill {
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: 2px solid #3498db;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #3498db;
+    width: 0%;
+    transition: width 0.3s ease;
+    z-index: 0;
+}
+
+.progress-text {
+    position: relative;
+    z-index: 1;
+}
+
+/* Spinner Loading Button */
+.btn-spinner-load {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.spinner-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.spinner {
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-spinner-load[data-loading="true"] .spinner {
+    opacity: 1;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Dots Loading Button */
+.btn-dots-load {
+    background: #9b59b6;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dots {
+    display: flex;
+    gap: 4px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: dotPulse 1.4s ease-in-out infinite both;
+}
+
+.dot:nth-child(1) { animation-delay: -0.32s; }
+.dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes dotPulse {
+    0%, 80%, 100% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Progress Bar Button */
+.btn-progress-bar {
+    background: transparent;
+    border: 2px solid #e74c3c;
+    color: #e74c3c;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    width: 150px;
+    height: 50px;
+}
+
+.progress-bar-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: #e74c3c;
+    width: 0%;
+    transition: width 2s ease;
+    border-radius: 23px;
+}
+
+.btn-progress-bar:hover .progress-bar-fill {
+    width: 100%;
+}
+
+.progress-bar-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    z-index: 1;
+}
+
+/* Shape Morph Button */
+.btn-shape-morph {
+    background: #f39c12;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+}
+
+.btn-shape-morph:hover {
+    border-radius: 50px;
+    padding: 15px 25px;
+}
+
+/* Color Morph Button */
+.btn-color-morph {
+    background: linear-gradient(45deg, #3498db, #e74c3c);
+    background-size: 200% 200%;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.5s ease;
+    animation: colorShift 3s ease infinite;
+}
+
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Size Morph Button */
+.btn-size-morph {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-size-morph:hover {
+    transform: scale(1.2);
+    padding: 20px 40px;
+}
+
+/* Explosion Button */
+.btn-explosion {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    position: relative;
+    overflow: visible;
+}
+
+.explosion-particles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #f39c12;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.btn-explosion:active .particle {
+    animation: explode 0.6s ease-out;
+}
+
+@keyframes explode {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1) translate(var(--x, 0), var(--y, 0));
+    }
+}
+
+.btn-explosion:active .particle:nth-child(1) { --x: -30px; --y: -30px; }
+.btn-explosion:active .particle:nth-child(2) { --x: 30px; --y: -30px; }
+.btn-explosion:active .particle:nth-child(3) { --x: -30px; --y: 30px; }
+.btn-explosion:active .particle:nth-child(4) { --x: 30px; --y: 30px; }
+.btn-explosion:active .particle:nth-child(5) { --x: -40px; --y: 0px; }
+.btn-explosion:active .particle:nth-child(6) { --x: 40px; --y: 0px; }
+.btn-explosion:active .particle:nth-child(7) { --x: 0px; --y: -40px; }
+.btn-explosion:active .particle:nth-child(8) { --x: 0px; --y: 40px; }
+
+/* Stardust Button */
+.btn-stardust {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    position: relative;
+    overflow: visible;
+}
+
+.stardust {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #f1c40f;
+    border-radius: 50%;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.star:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+.star:nth-child(2) { top: 80%; left: 80%; animation-delay: 0.5s; }
+.star:nth-child(3) { top: 30%; left: 70%; animation-delay: 1s; }
+.star:nth-child(4) { top: 70%; left: 30%; animation-delay: 1.5s; }
+.star:nth-child(5) { top: 50%; left: 10%; animation-delay: 0.25s; }
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+/* Complex Splash Button */
+.btn-splash-complex {
+    --white: #ffe7ff;
+    --purple-100: #f4b1fd;
+    --purple-200: #d190ff;
+    --purple-300: #c389f2;
+    --purple-400: #8e26e2;
+    --purple-500: #5e2b83;
+    --radius: 18px;
+    border-radius: var(--radius);
+    outline: none;
+    cursor: pointer;
+    font-size: 23px;
+    font-family: Arial;
+    background: transparent;
+    letter-spacing: -1px;
+    border: 0;
+    position: relative;
+    width: 220px;
+    height: 80px;
+    transform: rotate(353deg) skewX(4deg);
+}
+
+.btn-splash-complex .bg {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    filter: blur(1px);
+}
+
+.btn-splash-complex .bg::before,
+.btn-splash-complex .bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: calc(var(--radius) * 1.1);
+    background: var(--purple-500);
+}
+
+.btn-splash-complex .bg::before {
+    filter: blur(5px);
+    transition: all 0.3s ease;
+    box-shadow: -7px 6px 0 0 rgb(115 75 155 / 40%), -14px 12px 0 0 rgb(115 75 155 / 30%), -21px 18px 4px 0 rgb(115 75 155 / 25%);
+}
+
+.btn-splash-complex .wrap {
+    border-radius: inherit;
+    overflow: hidden;
+    height: 100%;
+    transform: translate(6px, -6px);
+    padding: 3px;
+    background: linear-gradient(to bottom, var(--purple-100) 0%, var(--purple-400) 100%);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.btn-splash-complex .outline {
+    position: absolute;
+    overflow: hidden;
+    inset: 0;
+    opacity: 0;
+    outline: none;
+    border-radius: inherit;
+    transition: all 0.4s ease;
+}
+
+.btn-splash-complex .content {
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    gap: 16px;
+    border-radius: calc(var(--radius) * 0.85);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: linear-gradient(to bottom, var(--purple-300) 0%, var(--purple-400) 100%);
+    box-shadow: inset -2px 12px 11px -5px var(--purple-200);
+}
+
+.btn-splash-complex .char {
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-splash-complex .char span {
+    display: block;
+    color: transparent;
+    position: relative;
+}
+
+.btn-splash-complex .char span::before,
+.btn-splash-complex .char span::after {
+    content: attr(data-label);
+    position: absolute;
+    color: var(--white);
+    text-shadow: -1px 1px 2px var(--purple-500);
+    left: 0;
+}
+
+.btn-splash-complex .char.state-2 {
+    position: absolute;
+    left: 80px;
+}
+
+.btn-splash-complex .icon {
+    z-index: 10;
+}
+
+.btn-splash-complex .icon div {
+    position: relative;
+    width: 24px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 1px;
+    box-shadow: -2px 2px 5px var(--purple-400);
+}
+
+/* ===== FOOTER STYLES ===== */
+.footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: var(--white);
+    padding: 60px 0 20px;
+    margin-top: 100px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ecf0f1;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    color: #bdc3c7;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    color: #bdc3c7;
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #34495e;
+    color: #95a5a6;
+}
+
+/* ===== MODAL STYLES ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: #f8f9fa;
+    color: var(--text-color);
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-body h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.modal-body p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.modal-body pre {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #e9ecef;
+}
+
+.modal-body code {
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ===== COPY NOTIFICATION ===== */
+.copy-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(40,167,69,0.3);
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+
+.copy-notification.show {
+    transform: translateX(0);
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-content svg {
+    flex-shrink: 0;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .button-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    
+    .nav-list {
+        gap: 5px;
+    }
+    
+    .nav-list a {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 60px 0;
+    }
+    
+    .stats {
+        gap: 15px;
+    }
+    
+    .stat {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+    }
+    
+    .nav-list li {
+        margin: 3px 0;
+    }
+    
+    .button-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .button-item {
+        padding: 30px 20px;
+    }
+    
+    .section h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .modal-header,
+    .modal-body {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .header {
+        padding: 40px 0;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .button-item {
+        padding: 25px 15px;
+    }
+    
+    .section {
+        margin-bottom: 60px;
+    }
+    
+    .section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    /* Adjust complex buttons for mobile */
+    .btn-53 {
+        padding: 1rem 2rem;
+        font-size: 14px;
+    }
+    
+    .button-with-icon {
+        width: 100px;
+        height: 36px;
+        font-size: 12px;
+    }
+    
+    .btn-flowers {
+        width: 10em;
+        height: 3em;
+    }
+    
+    .animated-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+    
+    .continue-application {
+        padding: 15px 25px 15px 60px;
+        font-size: 13px;
+    }
+    
+    .btn-splash,
+    .btn-splash-complex {
+        width: 180px;
+        height: 60px;
+        font-size: 18px;
+    }
+    
+    .copy-notification {
+        right: 10px;
+        left: 10px;
+        transform: translateY(-100px);
+    }
+    
+    .copy-notification.show {
+        transform: translateY(0);
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .navigation,
+    .footer,
+    .copy-notification,
+    .modal {
+        display: none !important;
+    }
+    
+    .header {
+        background: none !important;
+        color: #000 !important;
+    }
+    
+    .button-item {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+    
+    .btn,
+    [class*="btn-"] {
+        background: #f8f9fa !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+}
+
+/* ===== ACCESSIBILITY IMPROVEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .button-item {
+        border: 2px solid #000;
+    }
+    
+    .btn,
+    [class*="btn-"] {
+        border: 2px solid;
+    }
+}
+
+/* ===== FOCUS STYLES FOR ACCESSIBILITY ===== */
+.btn:focus-visible,
+[class*="btn-"]:focus-visible,
+.nav-list a:focus-visible,
+.modal-close:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #e0e0e0;
+        --bg-color: #1a1a1a;
+        --white: #2d2d2d;
+    }
+    
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+    
+    .button-item {
+        background: var(--white);
+        border-color: #404040;
+    }
+    
+    .button-item code {
+        background: #3d3d3d;
+        color: #b0b0b0;
+        border-color: #404040;
+    }
+    
+    .navigation {
+        background: var(--white);
+        border-color: #404040;
+    }
+    
+    .nav-list a {
+        color: var(--text-color);
+    }
+    
+    .modal-content {
+        background-color: var(--white);
+    }
+    
+    .modal-header {
+        border-color: #404040;
+    }
+    
+    .modal-body pre {
+        background: #3d3d3d;
+        border-color: #404040;
+    }
+}
