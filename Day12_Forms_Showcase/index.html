@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Showcase - Creative Contact Forms Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Forms<span class="highlight">Showcase</span></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Creative Contact Forms</h1>
+            <p class="hero-subtitle">A showcase of beautifully designed and animated contact forms built with pure HTML & CSS</p>
+            <a href="#forms" class="cta-button">Explore Forms</a>
+        </div>
+        <div class="hero-animation">
+            <div class="floating-form"></div>
+        </div>
+    </section>
+
+    <!-- Forms Showcase Section -->
+    <section id="forms" class="forms-section">
+        <div class="section-header">
+            <h2>Contact Forms Collection</h2>
+            <p>Each form demonstrates different styling techniques and animations</p>
+        </div>
+
+        <!-- Form 1: Glassmorphism Style -->
+        <div class="form-container glass-container">
+            <h3 class="form-title">Glassmorphism Contact Form</h3>
+            <form class="contact-form glass-form">
+                <div class="form-group">
+                    <input type="text" id="name1" name="name" required>
+                    <label for="name1">Full Name</label>
+                    <span class="form-line"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email1" name="email" required>
+                    <label for="email1">Email Address</label>
+                    <span class="form-line"></span>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone1" name="phone">
+                    <label for="phone1">Phone Number</label>
+                    <span class="form-line"></span>
+                </div>
+                <div class="form-group">
+                    <textarea id="message1" name="message" rows="4" required></textarea>
+                    <label for="message1">Your Message</label>
+                    <span class="form-line"></span>
+                </div>
+                <button type="submit" class="submit-btn glass-btn">
+                    <span>Send Message</span>
+                    <div class="btn-ripple"></div>
+                </button>
+            </form>
+        </div>
+
+        <!-- Form 2: Neon Glow Style -->
+        <div class="form-container neon-container">
+            <h3 class="form-title neon-title">Neon Glow Contact Form</h3>
+            <form class="contact-form neon-form">
+                <div class="form-group neon-group">
+                    <input type="text" id="name2" name="name" required>
+                    <label for="name2">Name</label>
+                </div>
+                <div class="form-group neon-group">
+                    <input type="email" id="email2" name="email" required>
+                    <label for="email2">Email</label>
+                </div>
+                <div class="form-group neon-group">
+                    <select id="subject2" name="subject" required>
+                        <option value="">Select Subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Support</option>
+                        <option value="business">Business</option>
+                    </select>
+                    <label for="subject2">Subject</label>
+                </div>
+                <div class="form-group neon-group">
+                    <textarea id="message2" name="message" rows="4" required></textarea>
+                    <label for="message2">Message</label>
+                </div>
+                <button type="submit" class="submit-btn neon-btn">
+                    <span>Submit</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Form 3: Gradient Card Style -->
+        <div class="form-container gradient-container">
+            <h3 class="form-title gradient-title">Gradient Card Form</h3>
+            <form class="contact-form gradient-form">
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <input type="text" id="fname3" name="firstname" required>
+                        <label for="fname3">First Name</label>
+                    </div>
+                    <div class="form-group half-width">
+                        <input type="text" id="lname3" name="lastname" required>
+                        <label for="lname3">Last Name</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email3" name="email" required>
+                    <label for="email3">Email Address</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="company3" name="company">
+                    <label for="company3">Company (Optional)</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message3" name="message" rows="5" required></textarea>
+                    <label for="message3">Tell us about your project</label>
+                </div>
+                <button type="submit" class="submit-btn gradient-btn">
+                    <span>Get In Touch</span>
+                    <div class="btn-bg"></div>
+                </button>
+            </form>
+        </div>
+
+        <!-- Form 4: Minimalist Style -->
+        <div class="form-container minimal-container">
+            <h3 class="form-title minimal-title">Minimalist Contact Form</h3>
+            <form class="contact-form minimal-form">
+                <div class="form-group minimal-group">
+                    <input type="text" id="name4" name="name" required>
+                    <span class="form-bar"></span>
+                    <label for="name4">Your Name</label>
+                </div>
+                <div class="form-group minimal-group">
+                    <input type="email" id="email4" name="email" required>
+                    <span class="form-bar"></span>
+                    <label for="email4">Email Address</label>
+                </div>
+                <div class="form-group minimal-group">
+                    <input type="text" id="website4" name="website">
+                    <span class="form-bar"></span>
+                    <label for="website4">Website (Optional)</label>
+                </div>
+                <div class="form-group minimal-group">
+                    <textarea id="message4" name="message" rows="4" required></textarea>
+                    <span class="form-bar"></span>
+                    <label for="message4">Your Message</label>
+                </div>
+                <button type="submit" class="submit-btn minimal-btn">
+                    Send Message
+                </button>
+            </form>
+        </div>
+
+        <!-- Form 5: 3D Card Style -->
+        <div class="form-container card-3d-container">
+            <div class="card-3d">
+                <h3 class="form-title card-3d-title">3D Card Contact Form</h3>
+                <form class="contact-form card-3d-form">
+                    <div class="form-group card-3d-group">
+                        <input type="text" id="name5" name="name" required>
+                        <label for="name5">Full Name</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    <div class="form-group card-3d-group">
+                        <input type="email" id="email5" name="email" required>
+                        <label for="email5">Email</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    <div class="form-group card-3d-group">
+                        <input type="tel" id="phone5" name="phone">
+                        <label for="phone5">Phone</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    <div class="form-group card-3d-group">
+                        <textarea id="message5" name="message" rows="4" required></textarea>
+                        <label for="message5">Message</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    <button type="submit" class="submit-btn card-3d-btn">
+                        <span>Contact Us</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>About This Project</h2>
+            <p>This Forms Showcase website demonstrates various creative approaches to designing contact forms using only HTML and CSS. Each form showcases different styling techniques, animations, and user interaction patterns.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Pure CSS</h3>
+                    <p>No JavaScript required - all animations and interactions are CSS-powered</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Responsive</h3>
+                    <p>All forms adapt beautifully to different screen sizes</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Accessible</h3>
+                    <p>Built with accessibility best practices in mind</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Forms Showcase. Created for 100 Days Challenge. Built with ❤️ using HTML & CSS</p>
+        </div>
+    </footer>
+</body>
+</html>
