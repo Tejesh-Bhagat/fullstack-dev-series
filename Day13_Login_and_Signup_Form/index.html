@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for responsive design and character encoding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Main container for the signin form -->
+    <div class="container">
+        <!-- Signin form card -->
+        <div class="form-card">
+            <!-- Header section with welcome message -->
+            <div class="form-header">
+                <h1>Welcome Back</h1>
+                <p>Please sign in to your account</p>
+            </div>
+            
+            <!-- Signin form -->
+            <form class="auth-form">
+                <!-- Email input field -->
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <!-- Password input field -->
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <!-- Remember me checkbox -->
+                <div class="checkbox-group">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                
+                <!-- Submit button -->
+                <button type="submit" class="btn-primary">Sign In</button>
+                
+                <!-- Forgot password link -->
+                <a href="#" class="forgot-link">Forgot your password?</a>
+            </form>
+            
+            <!-- Footer with signup link -->
+            <div class="form-footer">
+                <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
