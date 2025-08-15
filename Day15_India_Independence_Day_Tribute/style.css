@@ -1,0 +1,454 @@
+ /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            /* More visible tricolor background for the entire body */
+            background-image: linear-gradient(to right, rgba(255, 153, 51, 0.3), rgba(255, 255, 255, 0.3), rgba(18, 136, 7, 0.3));
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FF9933;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #128807;
+        }
+
+        .btn {
+            background-color: #000080;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: #000050;
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .burger-menu .line {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 4px 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: url('https://thumbs.dreamstime.com/b/indian-independence-day-wallpaper-patriotic-tricolor-background-vibrant-design-featuring-national-ashoka-chakra-373583289.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            margin-top: -80px;
+            padding-top: 80px;
+        }
+
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+            text-align: center;
+            /* White background with a slightly visible tricolor overlay */
+            background-image: linear-gradient(to right, rgba(255, 153, 51, 0.1), rgba(255, 255, 255, 0.1), rgba(18, 136, 7, 0.1));
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            margin: 20px auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #000080;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #FF9933;
+            border-radius: 2px;
+        }
+
+        /* Independence Story Section */
+        .independence-story {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .independence-story .text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .independence-story .image-content {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .independence-story img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Shivaji Section */
+        .shivaji-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .shivaji-image {
+            flex: 1;
+            min-width: 40%; /* Adjusted width */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shivaji-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .shivaji-info {
+            flex: 1;
+            min-width: 40%; /* Adjusted width */
+        }
+
+        .shivaji-info h3 {
+            font-size: 2rem;
+            color: #000080;
+        }
+
+        /* Freedom Fighters Section */
+        .freedom-fighters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .fighter-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .fighter-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fighter-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid #128807;
+        }
+
+        .fighter-card h3 {
+            font-size: 1.5rem;
+            margin: 15px 0 10px;
+            color: #000080;
+        }
+
+        .fighter-card p {
+            font-size: 0.95rem;
+            padding: 0 20px 20px;
+            color: #555;
+        }
+
+        /* Armed Forces Section */
+        .armed-forces-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .force-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .force-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .force-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #FF9933;
+        }
+
+        .force-card h3 {
+            font-size: 1.5rem;
+            margin: 15px 0 10px;
+            color: #000080;
+        }
+
+        .force-card p {
+            font-size: 0.95rem;
+            padding: 0 20px 20px;
+            color: #555;
+        }
+
+        /* Unity in Diversity Section */
+        .unity-section {
+            padding: 80px 0;
+            text-align: center;
+            background-image: linear-gradient(to right, rgba(255, 153, 51, 0.1), rgba(255, 255, 255, 0.1), rgba(18, 136, 7, 0.1));
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            margin: 20px auto;
+        }
+
+        .unity-section img {
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        /* Rashtragan Section */
+        .rashtragan-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .rashtragan-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rashtragan-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .rashtragan-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .rashtragan-text p {
+            font-size: 1.4rem;
+            margin: 10px 0;
+            font-family: 'Poppins', sans-serif;
+            color: #000080;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.95);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 999;
+                padding-top: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px 0;
+                font-size: 1.2rem;
+            }
+
+            .burger-menu {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .independence-story,
+            .shivaji-section,
+            .rashtragan-row {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .shivaji-image {
+                min-width: 100%;
+            }
+
+            .shivaji-info {
+                min-width: 100%;
+                text-align: center;
+            }
+
+            .rashtragan-text {
+                text-align: center;
+            }
+
+            .rashtragan-text p {
+                font-size: 1.2rem;
+            }
+        }
