@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFC Clone</title>
+    <!-- Use Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Left side: Logo -->
+            <div class="flex items-center space-x-8">
+                <a href="#">
+                    <img src="https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg" alt="KFC Logo"
+                        class="h-6 sm:h-8 w-auto">
+                </a>
+                <div class="hidden md:flex space-x-6 text-sm font-medium">
+                    <a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Menu</a>
+                    <a href="#" class="text-gray-600 hover:text-red-500 transition-colors">Deals</a>
+                </div>
+            </div>
+            <!-- Right side: Actions -->
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2 text-sm text-gray-600 hidden sm:flex">
+                    <i class="fa-regular fa-user"></i>
+                    <a href="#" class="hover:text-red-500 transition-colors">Sign In</a>
+                </div>
+                <div class="border-l border-gray-200 h-6 hidden sm:block"></div>
+                <div class="flex items-center space-x-2 relative cursor-pointer group">
+                    <!-- Updated cart icon with the provided SVG -->
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDLJP0B2-dMhPMWLx7DWjv8G8PPa6fDlpfQw&s"
+                        alt="Cart" class="h-6 w-auto text-red-600">
+                    <span class="text-gray-800 font-bold">₹0</span>
+                    <div
+                        class="absolute right-0 top-full mt-2 w-64 p-4 bg-white rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto">
+                        <p class="text-sm text-gray-500 text-center">Your cart is empty!</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Order Type Selection -->
+    <section class="order-type-section">
+        <div class="container">
+            <div class="kfc-stripes">
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+                <div class="stripe"></div>
+            </div>
+            <h2 class="order-type-title">SELECT YOUR ORDER TYPE TO START</h2>
+            <div class="order-type-buttons">
+                <button class="order-btn">DELIVERY</button>
+                <button class="order-btn active">PICK UP</button>
+                <button class="order-btn">DINE IN</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Hero Section with Image Slider -->
+    <section class="mb-12">
+        <!-- The hero section is now set to a full-screen height minus the header height -->
+        <div id="hero-slider" class="relative w-full min-h-[calc(100vh-64px)] rounded-b-2xl overflow-hidden shadow-lg">
+            <!-- Images for the slider will be dynamically added here by JavaScript -->
+        </div>
+    </section>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <!-- Welcome Section -->
+        <section class="mb-12 text-center py-8">
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-800 mb-4">
+                LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN
+            </h1>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button
+                    class="px-6 py-3 bg-red-600 text-white font-semibold rounded-full shadow-lg hover:bg-red-700 transition-colors">
+                    Start Order
+                </button>
+                <button
+                    class="px-6 py-3 bg-white text-red-600 font-semibold rounded-full border border-gray-300 shadow-md hover:bg-gray-100 transition-colors">
+                    Sign in to see Deals
+                </button>
+            </div>
+        </section>
+
+        <!-- Browse Categories Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">BROWSE CATEGORIES</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <!-- Category 1 -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img src="https://images.ctfassets.net/wtodlh47qxpt/4UNUUG5GkRvJLXtv8lJDMM/bcc8b9bdc71e0515d7a05073f3003bb1/KFC-50-menu-Category-Logo-Units-465-X-327-12-June-F1_2.jpg?fm=webp&fit=fill"
+                        alt="50 Off" class="w-full h-32 sm:h-40 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">50 OFF</p>
+                    </div>
+                </div>
+                <!-- Category 2 -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img src="https://images.ctfassets.net/wtodlh47qxpt/2s9XvSxv6QOETEpcj4eQij/2d0ed811f1c814a9d0e664442e67a633/9_for_299_offer.jpeg?fm=webp&fit=fill"
+                        alt="Value Combos" class="w-full h-32 sm:h-40 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">Value Combos</p>
+                    </div>
+                </div>
+                <!-- Category 3 -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img src="https://images.ctfassets.net/wtodlh47qxpt/6PaCYKRW1RvQslg8jvsLTe/94da2953dd942a40c67ae18d972fb078/Category_image_465x327.jpg?fm=webp&fit=fill"
+                        alt="Chicken Buckets" class="w-full h-32 sm:h-40 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">Chicken Buckets</p>
+                    </div>
+                </div>
+                <!-- Category 4 -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img src="https://images.ctfassets.net/wtodlh47qxpt/yNSmnpITkh1FGAWYdItp7/65276730049369a8a730c394ae9943d8/CAT84?fm=webp&fit=fill"
+                        alt="Hot & Crispy Chicken" class="w-full h-32 sm:h-40 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">Hot & Crispy Chicken</p>
+                    </div>
+                </div>
+                <!-- Category 5 -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img src="https://images.ctfassets.net/wtodlh47qxpt/5iYMlSgO8gr09Rjbn185qs/8f330ee5eb94ba4eff4f4552e361218d/KFC-Variety-Bucket.jpg?fm=webp&fit=fill"
+                        alt="Variety Buckets" class="w-full h-32 sm:h-40 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">Variety Buckets</p>
+                    </div>
+                </div>
+                <!-- Category 6 -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img src="https://images.ctfassets.net/wtodlh47qxpt/48AoLfan1j0c0TXdCYgvOA/0187171f87cb34d1ce4179433e90e5c6/CAT116?fm=webp&fit=fill"
+                        alt="Box Meals" class="w-full h-32 sm:h-40 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">Box Meals</p>
+                    </div>
+                </div>
+                <!-- Category 7 -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img src="https://images.ctfassets.net/wtodlh47qxpt/3NdeHBtjjYPHMAoOTpEZ0w/d6c6fadd15bcfa8f6bc969aa02207f0c/KFC-Burger.jpg?fm=webp&fit=fill"
+                        alt="Burgers" class="w-full h-32 sm:h-40 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">Burgers</p>
+                    </div>
+                </div>
+                <!-- Category 8 -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img src="https://images.ctfassets.net/wtodlh47qxpt/1FdIvtZU8aeIDX1CWQpWWf/34d275b32b9660b1062745eda5f6a5ff/CAT89.jpg?fm=webp&fit=fill"
+                        alt="Snacks & Beverages" class="w-full h-32 sm:h-40 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">Snacks & Beverages</p>
+                    </div>
+                </div>
+                <!-- Category 9 -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img src="https://images.ctfassets.net/wtodlh47qxpt/3XJELuUtdk0lTpnGRWnJvW/bc0cf7c981fb86e85a8b75be1fdc5f39/KFC-Value-Lunch.jpg?fm=webp&fit=fill"
+                        alt="Value Lunch" class="w-full h-32 sm:h-40 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">Value Lunch</p>
+                    </div>
+                </div>
+                <!-- Category 10 -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img src="https://images.ctfassets.net/wtodlh47qxpt/6Xk1fmgtJzLVxRo3si758m/d42f542ada08cbffdec2d6c6b6340ab2/KFC-rice-bowl.jpg?fm=webp&fit=fill"
+                        alt="Rice Bowls" class="w-full h-32 sm:h-40 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm font-semibold text-gray-700 text-center">Rice Bowls</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Offers Section -->
+        <section class="offers-section">
+            <div class="container">
+                <div class="kfc-stripes">
+                    <div class="stripe"></div>
+                    <div class="stripe"></div>
+                    <div class="stripe"></div>
+                </div>
+                <div class="offers-header">
+                    <h2>SAVE MORE AS YOU ORDER</h2>
+                    <div class="offers-meta">
+                        <span class="members-only">For Members Only</span>
+                        <a href="#" class="view-offers">View Offers →</a>
+                    </div>
+                </div>
+                <div class="offers-carousel">
+                    <button class="carousel-btn prev">‹</button>
+                    <div class="offers-grid">
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/CHKZINGER.jpg?ver=71.74"
+                                    alt="Free Classic Zinger">
+                            </div>
+                            <h3>FREE CLASSIC ZINGER</h3>
+                            <p class="offer-condition">Min. Order Value 499</p>
+                            <button class="view-details">View Details</button>
+                            <button class="apply-offer">Apply Offer</button>
+                        </div>
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/ADDCHK99.jpg?ver=71.74"
+                                    alt="2 PC Hot & Crispy Chicken">
+                            </div>
+                            <h3>2 PC HOT & CRISPY CHICKEN @ RS 99</h3>
+                            <p class="offer-condition">Min. Order Value 499</p>
+                            <button class="view-details">View Details</button>
+                            <button class="apply-offer">Apply Offer</button>
+                        </div>
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/BIGSAVE.jpg?ver=71.74"
+                                    alt="Upto Rs 100 Off">
+                            </div>
+                            <h3>UPTO RS 100 OFF</h3>
+                            <p class="offer-condition">Min. Order Value 699</p>
+                            <button class="view-details">View Details</button>
+                            <button class="apply-offer">Apply Offer</button>
+                        </div>
+                        <div class="offer-card">
+                            <div class="offer-image">
+                                <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/PHP75.jpg?ver=71.74"
+                                    alt="Rs 75 Off">
+                            </div>
+                            <h3>RS 75 OFF</h3>
+                            <p class="offer-condition">Min. Order Value 599</p>
+                            <button class="view-details">View Details</button>
+                            <button class="apply-offer disabled">Apply Offer</button>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next">›</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 border-b border-gray-700 pb-8 mb-8">
+                <!-- Footer Logo -->
+                <div class="col-span-2 md:col-span-1">
+                    <img src="https://images.ctfassets.net/wtodlh47qxpt/25FSYFuEtGct8NSrtpKe6d/b602f6fe0bf294e6a6dff5d7648bf594/KFC_Logo.svg?h=120&w=120&fm=webp&fit=fill"
+                        alt="KFC Logo" class="h-16 w-auto mb-4">
+                    <p class="text-xs">
+                        A product of Yum! Brands
+                    </p>
+                </div>
+                <!-- Links Column 1 -->
+                <div>
+                    <h3 class="font-bold text-white mb-4">KFC India</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:underline">About Us</a></li>
+                        <li><a href="#" class="hover:underline">Contact Us</a></li>
+                        <li><a href="#" class="hover:underline">Blog</a></li>
+                        <li><a href="#" class="hover:underline">Careers</a></li>
+                    </ul>
+                </div>
+                <!-- Links Column 2 -->
+                <div>
+                    <h3 class="font-bold text-white mb-4">Legal</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:underline">Disclaimer</a></li>
+                        <li><a href="#" class="hover:underline">FAQs</a></li>
+                    </ul>
+                </div>
+                <!-- Links Column 3 -->
+                <div>
+                    <h3 class="font-bold text-white mb-4">Find a Store</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:underline">Store Locator</a></li>
+                    </ul>
+                </div>
+                <!-- Social Media & App Stores -->
+                <div class="col-span-2 md:col-span-1 flex flex-col items-center md:items-start">
+                    <h3 class="font-bold text-white mb-4">Follow Us</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-white hover:text-red-500 transition-colors"><i
+                                class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-red-500 transition-colors"><i
+                                class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-red-500 transition-colors"><i
+                                class="fab fa-twitter text-xl"></i></a>
+                    </div>
+                    <div class="flex space-x-2">
+                        <!-- Updated App Store and Google Play icons with the provided links -->
+                        <a href="#">
+                            <img src="https://www.svgrepo.com/show/303128/download-on-the-app-store-apple-logo.svg"
+                                alt="App Store" class="h-10"></a>
+                        <a href="#"><img
+                                src="https://png.pngtree.com/png-vector/20230817/ourmid/pngtree-google-play-app-icon-vector-png-image_9183316.png"
+                                alt="Google Play" class="h-10"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright and trademark section -->
+            <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2023 KFC. All Rights Reserved.</p>
+                <div class="flex space-x-4 mt-4 sm:mt-0">
+                    <p>Powered by YourNameHere</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('hero-slider');
+            // An array of hero image URLs
+            const images = [
+                'https://images.ctfassets.net/wtodlh47qxpt/54IBqd3Vcue578oqaezx1I/e5c511d7801a2e9dfe67782c6abb3293/KFC-Gold-Banner-1B_1.jpg?fm=webp',
+                'https://images.ctfassets.net/wtodlh47qxpt/UQ6HOb2pcsyo4qzTzE4f4/e46a5cb7417e1e40940e818d0cd6314b/KFC-50-OFF-Web-Banner-2880-X-1260-3JunF1C.jpg?fm=webp',
+                'https://images.ctfassets.net/wtodlh47qxpt/7oPeoPgaADykhDQb4IpxjR/fc8611839c5f3765f5712aad43ee6803/Double_Down_banner_Size_2880x1260px.jpg?fm=webp'
+            ];
+            let currentIndex = 0;
+
+            // Pre-load images to avoid flickering
+            images.forEach(imgUrl => {
+                const img = new Image();
+                img.src = imgUrl;
+            });
+
+            // Function to update the slider
+            function updateSlider() {
+                // Clear existing images to prevent stacking
+                while (slider.firstChild) {
+                    slider.removeChild(slider.firstChild);
+                }
+
+                const img = document.createElement('img');
+                img.src = images[currentIndex];
+                img.alt = `KFC Hero Banner ${currentIndex + 1}`;
+                img.className = 'slider-image active';
+                slider.appendChild(img);
+
+                currentIndex = (currentIndex + 1) % images.length;
+            }
+
+            // Initial call to set up the first image
+            updateSlider();
+            // Start the automatic image change
+            setInterval(updateSlider, 2000);
+        });
+    </script>
+</body>
+
+</html>
