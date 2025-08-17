@@ -1,0 +1,94 @@
+        /* General body styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdf8f8;
+            color: #1a202c; /* Text color */
+            scroll-behavior: smooth;
+        }
+
+        /* --- Filtering Logic (CSS Only) --- */
+        /* Hide all recipe items by default */
+        .recipe-item {
+            display: none;
+        }
+
+        /* Use radio buttons and :checked to control visibility */
+        #all-filter:checked ~ main .recipe-item,
+        #veg-filter:checked ~ main .veg-recipe,
+        #non-veg-filter:checked ~ main .non-veg-recipe {
+            display: block;
+        }
+
+        /* Update button styles based on :checked state */
+        .filter-btn {
+            @apply px-6 py-2 rounded-full font-semibold transition-all duration-300;
+        }
+        #all-filter:checked ~ .header-content #all-label {
+            @apply bg-orange-500 text-white shadow-lg transform scale-105;
+        }
+        #veg-filter:checked ~ .header-content #veg-label {
+            @apply bg-green-500 text-white shadow-lg transform scale-105;
+        }
+        #non-veg-filter:checked ~ .header-content #non-veg-label {
+            @apply bg-red-500 text-white shadow-lg transform scale-105;
+        }
+        .filter-btn:not(:checked) {
+            @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
+        }
+
+        /* --- Recipe Detail Page Logic (CSS Only) --- */
+        /* Hide all recipe detail sections by default */
+        .recipe-detail {
+            display: none;
+        }
+
+        /* Use :target pseudo-class to show the selected recipe */
+        .recipe-detail:target {
+            display: block;
+        }
+
+        /* Hide the main gallery when a recipe is selected */
+        .recipe-detail:target ~ .homepage-content,
+        .recipe-detail:target ~ .homepage-content + .footer-content {
+            display: none;
+        }
+
+        /* Fade-in effect for the recipe detail page */
+        .recipe-detail {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* --- General Layout and Aesthetics --- */
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 1.5rem; /* Gap-6 in Tailwind */
+        }
+        .span-2-col { grid-column: span 2; }
+        .span-2-row { grid-row: span 2; }
+
+        .recipe-card {
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+        .recipe-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+        }
+        .recipe-card img {
+            transition: transform 0.7s ease;
+        }
+        .recipe-card:hover img {
+            transform: scale(1.1);
+        }
+        .lucide-icon {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: middle;
+        }

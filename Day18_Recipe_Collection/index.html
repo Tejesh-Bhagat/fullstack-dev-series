@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Collection</title>
+    <!-- Inter Font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- These radio buttons control the filtering of recipes. They are hidden. -->
+    <input type="radio" id="all-filter" name="filter" checked class="hidden">
+    <input type="radio" id="veg-filter" name="filter" class="hidden">
+    <input type="radio" id="non-veg-filter" name="filter" class="hidden">
+
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
+            <h1 class="text-4xl font-bold text-orange-600 hover:text-orange-700 transition-colors duration-300">
+                Recipe Collection 🍽️
+            </h1>
+            <!-- Navigation buttons -->
+            <nav class="flex space-x-6">
+                <button id="all-btn"
+                    class="px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-orange-500 text-white shadow-lg transform scale-105">
+                    All Recipes
+                </button>
+                <button id="veg-btn"
+                    class="px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-green-100 hover:text-green-600">
+                    Vegetarian
+                </button>
+                <button id="non-veg-btn"
+                    class="px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-red-100 hover:text-red-600">
+                    Non-Vegetarian
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="min-h-screen">
+        <!-- --- HOME PAGE CONTENT --- -->
+        <section id="homepage-content" class="homepage-content">
+            <!-- Hero Section -->
+            <div class="py-16 text-center">
+                <h2 class="text-5xl font-bold text-gray-800 mb-4">Discover Amazing Recipes</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    From traditional Indian delicacies to modern fusion dishes, explore our collection of mouth-watering
+                    recipes
+                </p>
+            </div>
+            <!-- Recipe Gallery Section -->
+            <div id="recipe-gallery" class="max-w-7xl mx-auto px-4 pb-16">
+                <div class="recipe-grid">
+                    <!-- Palak Paneer -->
+                    <a href="#palak-paneer-detail"
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 recipe-card veg-recipe span-2-col span-2-row">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10">
+                        </div>
+                        <img src="https://www.munatycooking.com/wp-content/uploads/2022/09/palak-paneer-feature-1200-x-1200.jpg"
+                            alt="Palak Paneer"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-500 text-white">🌱
+                                    VEG</span>
+                                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">280
+                                    cal</span>
+                            </div>
+                            <h3
+                                class="text-white font-bold text-lg group-hover:text-orange-300 transition-colors duration-300">
+                                Palak Paneer
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- Paneer Tikka -->
+                    <a href="#paneer-tikka-detail"
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 recipe-card veg-recipe">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10">
+                        </div>
+                        <img src="https://spicecravings.com/wp-content/uploads/2020/10/Paneer-Tikka-Featured-1.jpg"
+                            alt="Paneer Tikka"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-500 text-white">🌱
+                                    VEG</span>
+                                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">320
+                                    cal</span>
+                            </div>
+                            <h3
+                                class="text-white font-bold text-lg group-hover:text-orange-300 transition-colors duration-300">
+                                Paneer Tikka
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- Desi Chicken -->
+                    <a href="#desi-chicken-detail"
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 recipe-card non-veg-recipe">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10">
+                        </div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzaFMAfAoznROD_NJikZx05Qq6HoJUAysQVg&s"
+                            alt="Desi Chicken"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-500 text-white">🍖
+                                    NON-VEG</span>
+                                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">380
+                                    cal</span>
+                            </div>
+                            <h3
+                                class="text-white font-bold text-lg group-hover:text-orange-300 transition-colors duration-300">
+                                Desi Chicken
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- Fish Fry -->
+                    <a href="#fish-fry-detail"
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 recipe-card non-veg-recipe">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10">
+                        </div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS82PKpjDSZP1ltBnhMYcVPgp1C0s5_kLhwVQ&s"
+                            alt="Fish Fry"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-500 text-white">🍖
+                                    NON-VEG</span>
+                                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">290
+                                    cal</span>
+                            </div>
+                            <h3
+                                class="text-white font-bold text-lg group-hover:text-orange-300 transition-colors duration-300">
+                                Fish Fry
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- Paper Dosa -->
+                    <a href="#paper-dosa-detail"
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 recipe-card veg-recipe">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10">
+                        </div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Tn2OWAOpMhC4Jg6Xs7u1PxLp5DfOAqgk7w&s"
+                            alt="Paper Dosa"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-500 text-white">🌱
+                                    VEG</span>
+                                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">250
+                                    cal</span>
+                            </div>
+                            <h3
+                                class="text-white font-bold text-lg group-hover:text-orange-300 transition-colors duration-300">
+                                Paper Dosa
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- Idli -->
+                    <a href="#idli-detail"
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 recipe-card veg-recipe">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10">
+                        </div>
+                        <img src="https://instamart-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_960,w_960//InstamartAssets/idli_vada.webp"
+                            alt="Idli"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-500 text-white">🌱
+                                    VEG</span>
+                                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">150
+                                    cal</span>
+                            </div>
+                            <h3
+                                class="text-white font-bold text-lg group-hover:text-orange-300 transition-colors duration-300">
+                                Idli
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- Gulab Jamun -->
+                    <a href="#gulab-jamun-detail"
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 recipe-card veg-recipe">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10">
+                        </div>
+                        <img src="https://talodfoods.com/cdn/shop/files/Gulab-Jamun-Creative_img.webp?v=1721036408&width=1500"
+                            alt="Gulab Jamun"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-500 text-white">🌱
+                                    VEG</span>
+                                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">180
+                                    cal</span>
+                            </div>
+                            <h3
+                                class="text-white font-bold text-lg group-hover:text-orange-300 transition-colors duration-300">
+                                Gulab Jamun
+                            </h3>
+                        </div>
+                    </a>
+
+                    <!-- Chole Bhature -->
+                    <a href="#chole-bhature-detail"
+                        class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 recipe-card veg-recipe span-2-col">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10">
+                        </div>
+                        <img src="https://st2.depositphotos.com/49005766/46429/i/450/depositphotos_464297234-stock-photo-indian-breakfast-poori-chickpea-chana.jpg"
+                            alt="Chole Bhature"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute bottom-0 left-0 right-0 p-6 z-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-green-500 text-white">🌱
+                                    VEG</span>
+                                <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">450
+                                    cal</span>
+                            </div>
+                            <h3
+                                class="text-white font-bold text-lg group-hover:text-orange-300 transition-colors duration-300">
+                                Chole Bhature
+                            </h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- RECIPE DETAIL PAGES --- -->
+        <!-- Each recipe has its own hidden section, shown when its #ID is in the URL -->
+        <section id="palak-paneer-detail" class="recipe-detail">
+            <!-- Header for back button -->
+            <header class="bg-white shadow-sm">
+                <div class="max-w-4xl mx-auto px-4 py-4">
+                    <a href="#"
+                        class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="w-5 h-5 mr-2">
+                            <path d="M19 12H5" />
+                            <path d="m12 19-7-7 7-7" />
+                        </svg>
+                        Back to Recipes
+                    </a>
+                </div>
+            </header>
+            <div class="max-w-4xl mx-auto px-4 py-8">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
+                    <div class="relative h-96">
+                        <img src="https://www.munatycooking.com/wp-content/uploads/2022/09/palak-paneer-feature-1200-x-1200.jpg"
+                            alt="Palak Paneer" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="px-4 py-2 rounded-full font-semibold bg-green-500 text-white">🌱
+                                    VEGETARIAN</span>
+                                <span class="bg-orange-500 text-white px-4 py-2 rounded-full font-semibold">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-4 h-4 inline mr-1">
+                                        <path
+                                            d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.5-1.5-3-3-3A6.5 6.5 0 0 0 2 12c0 3.31 3.25 5.21 6.5 2.5Z" />
+                                        <path
+                                            d="M17.5 14.5A2.5 2.5 0 0 0 20 12c0-1.5-1.5-3-3-3A6.5 6.5 0 0 0 13 12c0 3.31 3.25 5.21 6.5 2.5Z" />
+                                        <path
+                                            d="M15 5c.34-.58.65-1.18.91-1.8A8.5 8.5 0 0 1 18.5 2c.86 0 1.5.37 2 .85a2.12 2.12 0 0 1 .5 1.56A2 2 0 0 1 20 5c-.34.58-.65 1.18-.91 1.8A8.5 8.5 0 0 1 17.5 8c-.86 0-1.5-.37-2-.85a2.12 2.12 0 0 1-.5-1.56A2 2 0 0 1 15 5Z" />
+                                    </svg>
+                                    280 cal
+                                </span>
+                            </div>
+                            <h1 class="text-4xl font-bold text-white mb-2">Palak Paneer</h1>
+                            <div class="flex items-center space-x-6 text-white">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-5 h-5 mr-2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    30 mins
+                                </div>
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-5 h-5 mr-2">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                        <circle cx="9" cy="7" r="4" />
+                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                    </svg>
+                                    Serves 4
+                                </div>
+                                <div class="bg-white/20 px-3 py-1 rounded-full text-sm">Medium</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Ingredients -->
+                    <div class="md:col-span-1">
+                        <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-8">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-6">Ingredients</h2>
+                            <ul class="space-y-3">
+                                <li class="flex items-start"><span
+                                        class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span><span
+                                        class="text-gray-700">500g fresh spinach leaves</span></li>
+                                <li class="flex items-start"><span
+                                        class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span><span
+                                        class="text-gray-700">200g paneer cubes</span></li>
+                                <li class="flex items-start"><span
+                                        class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span><span
+                                        class="text-gray-700">2 onions, chopped</span></li>
+                                <li class="flex items-start"><span
+                                        class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span><span
+                                        class="text-gray-700">4 garlic cloves</span></li>
+                                <li class="flex items-start"><span
+                                        class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span><span
+                                        class="text-gray-700">1 inch ginger</span></li>
+                                <li class="flex items-start"><span
+                                        class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span><span
+                                        class="text-gray-700">2 green chilies</span></li>
+                                <li class="flex items-start"><span
+                                        class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span><span
+                                        class="text-gray-700">1 tsp cumin seeds</span></li>
+                                <li class="flex items-start"><span
+                                        class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span><span
+                                        class="text-gray-700">1 tsp garam masala</span></li>
+                                <li class="flex items-start"><span
+                                        class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span><span
+                                        class="text-gray-700">1/2 cup cream</span></li>
+                                <li class="flex items-start"><span
+                                        class="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span><span
+                                        class="text-gray-700">Salt to taste</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Instructions -->
+                    <div class="md:col-span-2">
+                        <div class="bg-white rounded-2xl shadow-lg p-6">
+                            <h2 class="text-2xl font-bold text-gray-800 mb-6">Instructions</h2>
+                            <div class="space-y-6">
+                                <div class="flex">
+                                    <div
+                                        class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                                        1</div>
+                                    <p class="text-gray-700 leading-relaxed pt-1">Blanch spinach leaves in boiling water
+                                        for 2 minutes, then transfer to ice water.</p>
+                                </div>
+                                <div class="flex">
+                                    <div
+                                        class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                                        2</div>
+                                    <p class="text-gray-700 leading-relaxed pt-1">Blend spinach with ginger, garlic, and
+                                        green chilies to make a smooth puree.</p>
+                                </div>
+                                <div class="flex">
+                                    <div
+                                        class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                                        3</div>
+                                    <p class="text-gray-700 leading-relaxed pt-1">Heat oil in a pan, add cumin seeds and
+                                        let them splutter.</p>
+                                </div>
+                                <div class="flex">
+                                    <div
+                                        class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                                        4</div>
+                                    <p class="text-gray-700 leading-relaxed pt-1">Add chopped onions and sauté until
+                                        golden brown.</p>
+                                </div>
+                                <div class="flex">
+                                    <div
+                                        class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                                        5</div>
+                                    <p class="text-gray-700 leading-relaxed pt-1">Add spinach puree and cook for 5-7
+                                        minutes.</p>
+                                </div>
+                                <div class="flex">
+                                    <div
+                                        class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                                        6</div>
+                                    <p class="text-gray-700 leading-relaxed pt-1">Add paneer cubes and garam masala, mix
+                                        gently.</p>
+                                </div>
+                                <div class="flex">
+                                    <div
+                                        class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                                        7</div>
+                                    <p class="text-gray-700 leading-relaxed pt-1">Add cream and simmer for 3-4 minutes.
+                                    </p>
+                                </div>
+                                <div class="flex">
+                                    <div
+                                        class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                                        8</div>
+                                    <p class="text-gray-700 leading-relaxed pt-1">Garnish with cream and serve hot with
+                                        roti or rice.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- REPEAT DETAIL PAGE SECTIONS FOR EACH RECIPE --- -->
+        <!-- You would repeat the entire <section class="recipe-detail"> block for each recipe,
+             changing the ID, image, and content as needed. This creates a long, single-page site. -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-content bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">Recipe Collection</h3>
+            <p class="text-gray-400">Bringing you the best of Indian cuisine, one recipe at a time.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
