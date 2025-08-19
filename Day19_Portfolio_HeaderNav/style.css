@@ -1,0 +1,99 @@
+
+    /* ===== GLOBAL STYLES ===== */
+    :root {
+      --primary-color: #9333ea;
+      --primary-dark: #7e22ce;
+      --primary-light: #a855f7;
+      --secondary-color: #000021;
+      --dark-color: #0f172a;
+      --light-color: #f8fafc;
+      --gray-color: #94a3b8;
+      --dark-gray: #334155;
+      --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+                    0 4px 6px -2px rgba(0, 0, 0, 0.2);
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      background-color: var(--dark-color);
+      color: var(--light-color);
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth; /* Smooth scrolling for nav links */
+    }
+
+    header {
+      background-color: var(--secondary-color);
+      box-shadow: var(--box-shadow);
+    }
+
+    a {
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--primary-light);
+    }
+
+    /* Navbar link underline on hover */
+    .nav-link-hover::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      background: var(--primary-light);
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav-link-hover:hover::after {
+      width: 100%;
+    }
+
+    /* New primary button style with gradient and shadow */
+    .btn-primary {
+      background: linear-gradient(45deg, #4a90e2, #8a2be2);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+    }
+
+    /* New secondary button style to match the primary one */
+    .btn-secondary {
+      background: var(--dark-gray);
+      color: var(--light-color);
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+    }
+
+    /* Animation for content to fade in with a delay */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    .fade-in-delay-2 {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeIn 1s ease forwards;
+        animation-delay: 0.4s;
+    }
