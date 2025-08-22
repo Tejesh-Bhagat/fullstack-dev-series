@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejesh Bhagat | Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS CSS for animation on scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <!-- ================= HEADER start ================= -->
+    <header class="sticky top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-6 flex justify-between items-center py-4">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold" style="color: var(--primary-color);">
+                Tejesh<span class="text-white">.Portfolio </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <ul class="hidden md:flex space-x-8 font-medium text-gray-300">
+                <li><a href="#home" class="nav-link-hover">Home</a></li>
+                <li><a href="#about" class="nav-link-hover">About</a></li>
+                <li><a href="#skills" class="nav-link-hover">Skills</a></li>
+                <li><a href="#projects" class="nav-link-hover">Projects</a></li>
+                <li><a href="#contact" class="nav-link-hover">Contact</a></li>
+            </ul>
+
+            <!-- CTA Button -->
+            <a href="RESUME.pdf" target="_blank" class="hidden md:inline-block btn-primary">
+                Resume
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl text-gray-200">&#9776;</button>
+        </nav>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-6 py-4">
+            <ul class="space-y-4 text-gray-300">
+                <li><a href="#home" class="nav-link-hover">Home</a></li>
+                <li><a href="#about" class="nav-link-hover">About</a></li>
+                <li><a href="#skills" class="nav-link-hover">Skills</a></li>
+                <li><a href="#projects" class="nav-link-hover">Projects</a></li>
+                <li><a href="#contact" class="nav-link-hover">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- ================= HEADER end ================= -->
+
+    <!-- ================= HERO SECTION start ================= -->
+    <section id="home" class="hero-section min-h-[90vh] flex items-center px-6 py-20">
+        <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 w-full">
+            <!-- Hero Text Content -->
+            <div class="hero-text flex-1 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 opacity-0 fade-in-delay-1">
+                    Hi, I'm <span class="highlight-text-5">Tejesh Bhagat</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl font-bold text-gray-400 mb-4 opacity-0 fade-in-delay-2">
+                    Developer by Passion | MCA Graduate
+                </h2>
+                <p class="text-lg text-gray-300 mb-8 max-w-md mx-auto md:mx-0 opacity-0 fade-in-delay-3">
+                    I love building meaningful software that solves real-world problems. With a strong foundation
+                    in web technologies and software design, I’m always exploring new ways to grow, improve,
+                    and bring ideas to life through code. For me, development isn’t just work — it’s my passion.
+                </p>
+                <!-- Buttons -->
+                <div class="hero-buttons-5 flex flex-col sm:flex-row justify-center md:justify-start gap-4 mb-8 opacity-0 fade-in-delay-3">
+                    <a href="#projects" class="btn btn-primary-5">View Projects</a>
+                    <a href="RESUME.pdf" target="_blank" class="btn btn-outline-5">Download Resume</a>
+                </div>
+                <!-- Social Icons -->
+                <div class="social-icons-5 flex justify-center md:justify-start gap-5 text-2xl opacity-0 fade-in-delay-3">
+                    <a href="https://www.linkedin.com/in/tejesh-bhagat-a4845223a/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Tejesh-Bhagat" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.facebook.com/tejesh.bhagat.52" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tej_bhagat_/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:tejbhagat2001@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Profile Image -->
+            <div class="hero-image-container flex-1 flex justify-center opacity-0 fade-in-delay-2">
+                <div class="profile-image-5-container">
+                    <!-- You will need to replace this placeholder URL with your actual passphoto.png image path -->
+                    <img src="https://i.pinimg.com/736x/61/f7/5e/61f75ea9a680def2ed1c6929fe75aeee.jpg"
+                        alt="Tejesh Bhagat">
+                </div>
+            </div>
+        </div>
+        <!-- Scroll down icon -->
+        <a href="#about" class="scroll-down-5">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+    <!-- ================= HERO SECTION end ================= -->
+
+
+    <!-- ================== About Section start =======================-->
+    <section id="about" class="about py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-4xl font-bold highlight">About Me</h2>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- About Text Content -->
+                <div class="flex-1" data-aos="fade-right">
+                    <p>I am a full-stack developer, an architect of digital experiences. 💻 My passion lies in building
+                        robust, end-to-end solutions, from the intricate logic of the backend to the intuitive design
+                        of the user interface. I thrive on the challenge of connecting every piece of the puzzle,
+                        ensuring seamless functionality and a cohesive user journey.
+                    </p><br>
+                    <p>As a software developer, I am a problem-solver at heart. I approach every project with a
+                        structured mindset, breaking down complex requirements into manageable components. My journey is
+                        one of continuous learning, as I stay on the cutting edge of modern technologies to deliver
+                        efficient, scalable, and secure applications. </p>
+                    <p>My experience includes crafting dynamic web applications and optimizing data-driven dashboards.
+                        I've honed my skills in various languages and frameworks, always seeking the right tools for
+                        the job. Each line of code I write is a step towards building a better, more connected world.
+                    </p><br>
+                    <p>My work is a testament to my dedication and love for creating. I'm excited to continue this
+                        journey, transforming innovative ideas into functional, beautiful, and impactful software.
+                    </p>
+                </div>
+                <!-- About Info Content -->
+                <div class="flex-1" data-aos="fade-left">
+                    <h3 class="text-xl font-bold mb-4 highlight">Personal Info</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <p class="info-label">Name:</p>
+                            <p>Tejesh Mulchand Bhagat</p>
+                        </div>
+                        <div class="info-item">
+                            <p class="info-label">Email:</p>
+                            <p>tejbhagat2001@gmail.com</p>
+                        </div>
+                        <div class="info-item">
+                            <p class="info-label">Location:</p>
+                            <p>Nagpur, Maharashtra India</p>
+                        </div>
+                        <div class="info-item">
+                            <p class="info-label">Degree:</p>
+                            <p>Master of Computer Applications</p>
+                        </div>
+                    </div>
+                    <div class="interests">
+                        <h4 class="text-lg font-bold mb-4 highlight">My Interests</h4>
+                        <div class="interest-tags">
+                            <span>Frontend Development</span>
+                            <span>Backend Development</span>
+                            <span>Databases</span>
+                            <span>APIs</span>
+                            <span>Cloud Computing</span>
+                            <span>DevOps</span>
+                            <span>Software Architecture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= ABOUT ME SECTION end ================= -->
+
+    <!-- ================= EDUCATION SECTION ================= -->
+    <section id="education" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-900">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold highlight">Education</h2>
+        </div>
+    </section>
+
+    <!-- ================= EXPERIENCE SECTION ================= -->
+    <section id="experience" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-800">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold highlight">Experience</h2>
+        </div>
+    </section>
+
+    <!-- ================= SKILLS SECTION ================= -->
+    <section id="skills" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-900">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold highlight">Skills</h2>
+        </div>
+    </section>
+
+    <!-- ================= PROJECTS SECTION ================= -->
+    <section id="projects" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-800">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold highlight">Projects</h2>
+        </div>
+    </section>
+
+    <!-- ================= ACHIEVEMENTS SECTION ================= -->
+    <section id="achievements" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-900">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold highlight">Achievements</h2>
+        </div>
+    </section>
+
+    <!-- ================= CERTIFICATIONS SECTION ================= -->
+    <section id="certifications" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-800">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold highlight">Certifications</h2>
+        </div>
+    </section>
+
+    <!-- ================= RESUME SECTION ================= -->
+    <section id="resume" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-900">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold highlight">Resume</h2>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-800">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold highlight">Contact</h2>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER start ================= -->
+    <footer class="py-12 bg-dark-color text-center text-gray-400">
+        <p>&copy; 2023 Tejesh Bhagat. All Rights Reserved.</p>
+    </footer>
+    <!-- ================= FOOTER end ================= -->
+
+    <!-- =============== JS for Mobile Menu start ====================== -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    <!-- =============== JS for Mobile Menu end ====================== -->
+
+    <!-- AOS (Animate on Scroll) Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate on Scroll) Library
+        // Used for applying animation effects to elements when they scroll into view.
+        // Applies to multiple sections like About, Skills, Projects for visual enhancement.
+        AOS.init({
+            duration: 800, // Duration of animation in milliseconds
+            easing: 'ease', // Animation easing function
+            once: true, // Animates only once when the element is first scrolled into view
+            offset: 100 // Offset from the original trigger point
+        });
+    </script>
+</body>
+</html>

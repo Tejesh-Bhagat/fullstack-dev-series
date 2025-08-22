@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tejesh Bhagat | Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts - Poppins -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+
+  <!-- Font Awesome for social media icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER start ================= -->
+  <header class="sticky top-0 z-50">
+    <nav class="max-w-6xl mx-auto px-6 flex justify-between items-center py-4">
+      <!-- Logo -->
+      <a href="#" class="text-2xl font-bold" style="color: var(--primary-color);">
+        Tejesh<span class="text-white">.Portfolio </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul class="hidden md:flex space-x-8 font-medium text-gray-300">
+        <li><a href="#home" class="nav-link-hover">Home</a></li>
+        <li><a href="#about" class="nav-link-hover">About</a></li>
+        <li><a href="#skills" class="nav-link-hover">Skills</a></li>
+        <li><a href="#projects" class="nav-link-hover">Projects</a></li>
+        <li><a href="#contact" class="nav-link-hover">Contact</a></li>
+      </ul>
+
+      <!-- CTA Button -->
+      <a href="RESUME.pdf" target="_blank" class="hidden md:inline-block btn-primary">
+        Resume
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-2xl text-gray-200">&#9776;</button>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-6 py-4">
+      <ul class="space-y-4 text-gray-300">
+        <li><a href="#home" class="nav-link-hover">Home</a></li>
+        <li><a href="#about" class="nav-link-hover">About</a></li>
+        <li><a href="#skills" class="nav-link-hover">Skills</a></li>
+        <li><a href="#projects" class="nav-link-hover">Projects</a></li>
+        <li><a href="#contact" class="nav-link-hover">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  <!-- ================= HEADER end ================= -->
+
+  <!-- ================= HERO SECTION start ================= -->
+  <section id="home" class="hero-section min-h-[90vh] flex items-center px-6 py-20">
+    <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 w-full">
+      <!-- Hero Text Content -->
+      <div class="hero-text flex-1 text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 opacity-0 fade-in-delay-1">
+          Hi, I'm <span class="highlight-text-5">Tejesh Bhagat</span>
+        </h1>
+        <h2 class="text-xl md:text-2xl font-bold text-gray-400 mb-4 opacity-0 fade-in-delay-2">
+          Developer by Passion | MCA Graduate
+        </h2>
+        <p class="text-lg text-gray-300 mb-8 max-w-md mx-auto md:mx-0 opacity-0 fade-in-delay-3">
+          I love building meaningful software that solves real-world problems. With a strong foundation
+          in web technologies and software design, I’m always exploring new ways to grow, improve,
+          and bring ideas to life through code. For me, development isn’t just work — it’s my passion.
+        </p>
+        <!-- Buttons -->
+        <div class="hero-buttons-5 flex flex-col sm:flex-row justify-center md:justify-start gap-4 mb-8 opacity-0 fade-in-delay-3">
+          <a href="#projects" class="btn btn-primary-5">View Projects</a>
+          <a href="RESUME.pdf" target="_blank" class="btn btn-outline-5">Download Resume</a>
+        </div>
+        <!-- Social Icons -->
+        <div class="social-icons-5 flex justify-center md:justify-start gap-5 text-2xl opacity-0 fade-in-delay-3">
+          <a href="https://www.linkedin.com/in/tejesh-bhagat-a4845223a/" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/Tejesh-Bhagat" target="_blank">
+              <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.facebook.com/tejesh.bhagat.52" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/tej_bhagat_/" target="_blank">
+              <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:tejbhagat2001@gmail.com">
+              <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Profile Image -->
+      <div class="hero-image-container flex-1 flex justify-center opacity-0 fade-in-delay-2">
+        <div class="profile-image-5-container">
+          <!-- You will need to replace this placeholder URL with your actual passphoto.png image path -->
+          <img src="https://i.pinimg.com/736x/61/f7/5e/61f75ea9a680def2ed1c6929fe75aeee.jpg"
+               alt="Tejesh Bhagat">
+        </div>
+      </div>
+    </div>
+    <!-- Scroll down icon -->
+    <a href="#about" class="scroll-down-5">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
+  <!-- ================= HERO SECTION end ================= -->
+
+  <!-- ================= ABOUT ME SECTION ================= -->
+  <section id="about" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-800">
+    <div class="text-center max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">About Me</h2>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION SECTION ================= -->
+  <section id="education" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-900">
+    <div class="text-center max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Education</h2>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE SECTION ================= -->
+  <section id="experience" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-800">
+    <div class="text-center max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Experience</h2>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS SECTION ================= -->
+  <section id="skills" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-900">
+    <div class="text-center max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Skills</h2>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS SECTION ================= -->
+  <section id="projects" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-800">
+    <div class="text-center max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Projects</h2>
+    </div>
+  </section>
+
+  <!-- ================= ACHIEVEMENTS SECTION ================= -->
+  <section id="achievements" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-900">
+    <div class="text-center max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Achievements</h2>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATIONS SECTION ================= -->
+  <section id="certifications" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-800">
+    <div class="text-center max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Certifications</h2>
+    </div>
+  </section>
+
+  <!-- ================= RESUME SECTION ================= -->
+  <section id="resume" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-900">
+    <div class="text-center max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-6">Resume</h2>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT SECTION ================= -->
+  <section id="contact" class="min-h-screen py-20 px-6 flex items-center justify-center bg-gray-800">
+    <div class="text-center max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">Contact</h2>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER start ================= -->
+  <footer class="py-12 bg-dark-color text-center text-gray-400">
+    <p>&copy; 2023 Tejesh Bhagat. All Rights Reserved.</p>
+  </footer>
+  <!-- ================= FOOTER end ================= -->
+
+  <!-- =============== JS for Mobile Menu start ====================== -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+  <!-- =============== JS for Mobile Menu end ====================== -->
+
+</body>
+</html>

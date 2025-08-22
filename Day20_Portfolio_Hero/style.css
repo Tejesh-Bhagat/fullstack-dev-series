@@ -1,0 +1,263 @@
+    /* ===== GLOBAL STYLES start ===== */
+    :root {
+      --primary-color: #9333ea;
+      --primary-dark: #7e22ce;
+      --primary-light: #a855f7;
+      --secondary-color: #000021;
+      --dark-color: #0f172a;
+      --light-color: #f8fafc;
+      --gray-color: #94a3b8;
+      --dark-gray: #334155;
+      --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+                    0 4px 6px -2px rgba(0, 0, 0, 0.2);
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      background-color: var(--dark-color);
+      color: var(--light-color);
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth; /* Smooth scrolling for nav links */
+    }
+
+    header {
+      background-color: var(--secondary-color);
+      box-shadow: var(--box-shadow);
+    }
+
+    a {
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--primary-light);
+    }
+
+    /* Navbar link underline on hover */
+    .nav-link-hover::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      background: var(--primary-light);
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav-link-hover:hover::after {
+      width: 100%;
+    }
+
+    /* Primary button style with gradient and shadow */
+    .btn-primary {
+      background: linear-gradient(45deg, #4a90e2, #8a2be2);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+    }
+
+    /* Secondary button style */
+    .btn-secondary {
+      background: var(--dark-gray);
+      color: var(--light-color);
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+    }
+
+    /* Animation for content to fade in with a delay */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    .fade-in-delay-2 {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.4s;
+    }
+    /* ===== GLOBAL STYLES end ===== */
+    
+    /* ================= HERO SECTION STYLES start ================= */
+
+    /* H1 text glow effect */
+    .highlight-text-5 {
+        color: #8b5cf6;
+        
+    }
+
+    /* H1 glow animation */
+    @keyframes pulse-glow {
+        0%, 100% {
+            text-shadow: 0 0 5px #a78bfa, 0 0 10px #a78bfa, 0 0 15px #a78bfa;
+        }
+        50% {
+            text-shadow: 0 0 10px #c4b5fd, 0 0 20px #c4b5fd, 0 0 30px #c4b5fd;
+        }
+    }
+
+    /* Button styles */
+    .btn {
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-primary-5 {
+        background: linear-gradient(45deg, #4a90e2, #8a2be2);
+        color: white;
+        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+    }
+
+    .btn-primary-5:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(138, 43, 226, 0.6);
+    }
+
+    .btn-outline-5 {
+        background: transparent;
+        color: #f8fafc;
+        border: 2px solid #8a2be2;
+    }
+
+    .btn-outline-5:hover {
+        background: #8a2be2;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(138, 43, 226, 0.6);
+    }
+
+    /* Social icons styles */
+    .social-icons-5 a {
+        color: #6d6d7a;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-icons-5 a:hover {
+        color: #8a2be2;
+        transform: scale(1.1);
+    }
+
+    /* Profile image container styles */
+    .profile-image-5-container {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+      border: 5px solid #8b5cf6;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      animation: float 4s infinite ease-in-out;
+    }
+
+    .profile-image-5-container:hover {
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.8), inset 0 0 15px rgba(139, 92, 246, 0.5);
+      transform: scale(1.05);
+    }
+
+    .profile-image-5-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%; /* Image itself is a circle */
+    }
+
+    /* Floating animation start */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    /* Floating animation end */
+
+    /* Scroll down icon animation start */
+    .scroll-down-5 {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #8b5cf6;
+      font-size: 2rem;
+      animation: bounce 4s infinite;
+      cursor: pointer;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+    /* Scroll down icon animation end */
+
+    /* Fade-in animations */
+    .fade-in-delay-1 { animation: fadeIn 1s ease forwards; animation-delay: 0.2s; }
+    .fade-in-delay-2 { animation: fadeIn 1s ease forwards; animation-delay: 0.4s; }
+    .fade-in-delay-3 { animation: fadeIn 1s ease forwards; animation-delay: 0.6s; }
+
+    /* Responsive adjustments for mobile devices */
+    @media (max-width: 768px) {
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .hero-section .hero-text {
+            order: 2;
+            margin-top: 3rem;
+        }
+        .hero-section .hero-image-container {
+            order: 1;
+            margin-bottom: 2rem;
+        }
+        .hero-buttons-5 {
+            justify-content: center;
+        }
+        .social-icons-5 {
+            justify-content: center;
+        }
+        .hero-text h1 {
+            font-size: 2.5rem;
+        }
+        .hero-text h2 {
+            font-size: 1.5rem;
+        }
+    }
+    /* ================= HERO SECTION STYLES end ================= */
