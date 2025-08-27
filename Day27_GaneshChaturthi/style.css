@@ -1,0 +1,686 @@
+/* ===== GANESH CHATURTHI 2025 - MODERN CELEBRATION STYLES ===== */
+/* Complete modern redesign with contemporary styling */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+/* ===== MODERN CSS RESET ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-orange: #ff6b35;
+  --primary-gold: #f7931e;
+  --primary-green: #2e8b57;
+  --dark-bg: #0a0a0a;
+  --dark-card: #1a1a1a;
+  --light-bg: #fafafa;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-dark: #2a2a2a;
+  --accent-glow: rgba(255, 107, 53, 0.3);
+  --gradient-primary: linear-gradient(135deg, var(--primary-orange), var(--primary-gold));
+  --gradient-hero: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #2e8b57 100%);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== MODERN ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 30px var(--accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 60px var(--accent-glow), 0 0 90px var(--accent-glow);
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ===== MODERN HERO SECTION ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* Full-screen image background */
+  background-image: url("https://media.assettype.com/deccanherald%2F2025-08-25%2Fo0431m4y%2FLalbaugcha_Raja_first_look__1_.jpg?w=undefined");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Dark overlay for better text readability */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+/* Poetic hero title styling */
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ffd700, #ffffff, #ff6b35);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 1s ease-out, shimmer 3s ease-in-out infinite;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Poetic subtitle styling */
+.hero-poetry {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  animation: fadeInUp 1s ease-out 0.3s both;
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  color: #ffd700;
+  animation: fadeInUp 1s ease-out 0.6s both;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Floating elements for decoration */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-element {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 6s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.floating-element:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+  top: 60%;
+  right: 15%;
+  animation-delay: 1.5s;
+}
+
+.floating-element:nth-child(3) {
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 3s;
+}
+
+.floating-element:nth-child(4) {
+  top: 40%;
+  right: 25%;
+  animation-delay: 4.5s;
+}
+
+/* ===== MODERN CONTAINER ===== */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ===== MODERN SECTIONS ===== */
+.section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+  margin-bottom: 4rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-content {
+  background: var(--dark-card);
+  border-radius: 24px;
+  padding: 4rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* ===== MODERN CARDS ===== */
+.modern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.modern-card {
+  background: var(--dark-card);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.modern-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.modern-card:hover::before {
+  transform: scaleX(1);
+}
+
+.modern-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-orange);
+  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-gold);
+}
+
+.card-text {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ===== MODERN GALLERY ===== */
+.gallery-section {
+  background: var(--dark-card);
+  border-radius: 24px;
+  padding: 4rem;
+  margin: 4rem 0;
+}
+
+.gallery-category {
+  margin-bottom: 4rem;
+}
+
+.gallery-category-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-gold);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  height: 350px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  padding: 2rem;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+.gallery-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.gallery-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* ===== TEMPLE SHOWCASE ===== */
+.temple-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.temple-card {
+  background: var(--dark-card);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.temple-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(255, 107, 53, 0.2);
+}
+
+.temple-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.temple-content {
+  padding: 2rem;
+}
+
+.temple-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-gold);
+}
+
+.temple-features {
+  list-style: none;
+  color: var(--text-secondary);
+}
+
+.temple-features li {
+  padding: 0.3rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.temple-features li::before {
+  content: "🕉️";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+}
+
+/* ===== SPECIAL DAGDUSHETH SECTION ===== */
+.dagdusheth-special {
+  background: linear-gradient(135deg, var(--dark-card), rgba(255, 107, 53, 0.1));
+  border-radius: 30px;
+  padding: 3rem;
+  margin: 4rem 0;
+  border: 2px solid rgba(255, 107, 53, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.dagdusheth-special::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+.dagdusheth-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.dagdusheth-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 4px solid rgba(255, 107, 53, 0.5);
+}
+
+.dagdusheth-info h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: var(--primary-gold);
+  margin-bottom: 1.5rem;
+}
+
+.dagdusheth-info p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+/* ===== MODERN PRAYER SECTION ===== */
+.prayer-section {
+  background: var(--gradient-primary);
+  border-radius: 24px;
+  padding: 4rem;
+  text-align: center;
+  margin: 4rem 0;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.prayer-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.prayer-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 2;
+}
+
+.mantra-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  font-style: italic;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== MODERN COUNTDOWN ===== */
+.countdown-section {
+  background: var(--dark-card);
+  border-radius: 24px;
+  padding: 4rem;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.countdown-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--primary-gold);
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.time-unit {
+  background: var(--gradient-primary);
+  padding: 2rem;
+  border-radius: 16px;
+  min-width: 120px;
+  transition: transform 0.3s ease;
+}
+
+.time-unit:hover {
+  transform: scale(1.05);
+}
+
+.time-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.time-label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  opacity: 0.9;
+}
+
+/* ===== MODERN FOOTER ===== */
+.footer {
+  background: var(--dark-card);
+  border-radius: 24px;
+  padding: 4rem;
+  text-align: center;
+  margin: 4rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-text {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+
+  /* Mobile-specific hero adjustments */
+  .hero {
+    background-attachment: scroll;
+  }
+
+  .hero-poetry {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .section-content,
+  .gallery-section,
+  .prayer-section,
+  .countdown-section,
+  .footer {
+    padding: 2rem;
+  }
+
+  .modern-grid,
+  .temple-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown-timer {
+    gap: 1rem;
+  }
+
+  .time-unit {
+    min-width: 100px;
+    padding: 1.5rem;
+  }
+
+  .floating-elements {
+    display: none;
+  }
+
+  .dagdusheth-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
